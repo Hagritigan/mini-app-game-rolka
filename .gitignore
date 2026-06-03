@@ -1,0 +1,47 @@
+# Зависимости
+node_modules/
+
+# Сборка (пересобирается через npm run build)
+build/
+dist/
+
+# Переменные окружения и секреты
+.env
+.env.*
+!.env.example
+
+# Логи
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Кэш и временные файлы инструментов
+.vite/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# Тесты и покрытие
+coverage/
+.nyc_output/
+
+# ОС
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / редакторы
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# VK tunnel / deploy (локальные артефакты, если появятся)
+.vk-tunnel-config.json
+
+# Прочее
+*.local

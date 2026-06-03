@@ -1,0 +1,9 @@
+.achievements-panel__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: 24px 16px;
+  gap: 16px;
+}
