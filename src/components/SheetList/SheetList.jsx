@@ -1,10 +1,24 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { getSheetImageUrl } from '../../utils/getSheetImageUrl';
+import {
+  getSheetImageUrl,
+  SHEET_IMAGE_PLACEHOLDER_URL,
+} from '../../utils/getSheetImageUrl';
 import './SheetList.css';
 
 function SheetCard({ sheet, onSelect }) {
+  const [imageSrc, setImageSrc] = useState(() => getSheetImageUrl(sheet.gid));
   const [hasError, setHasError] = useState(false);
+
+  const isPlaceholder = imageSrc === SHEET_IMAGE_PLACEHOLDER_URL;
+
+  const handleImageError = () => {
+    if (imageSrc !== SHEET_IMAGE_PLACEHOLDER_URL) {
+      setImageSrc(SHEET_IMAGE_PLACEHOLDER_URL);
+      return;
+    }
+    setHasError(true);
+  };
 
   return (
     <button
@@ -16,14 +30,27 @@ function SheetCard({ sheet, onSelect }) {
       {hasError ? (
         <span className="sheet-card__fallback">{sheet.title}</span>
       ) : (
-        <img
-          src={getSheetImageUrl(sheet.gid)}
-          alt={sheet.title}
-          className="sheet-card__image"
-          loading="lazy"
-          decoding="async"
-          onError={() => setHasError(true)}
-        />
+        <div
+          className={
+            isPlaceholder
+              ? 'sheet-card__media sheet-card__media--placeholder'
+              : 'sheet-card__media'
+          }
+        >
+          <img
+            src={imageSrc}
+            alt={sheet.title}
+            className="sheet-card__image"
+            loading="lazy"
+            decoding="async"
+            onError={handleImageError}
+          />
+          {isPlaceholder ? (
+            <div className="sheet-card__title-bar" aria-hidden="true">
+              <span className="sheet-card__title">{sheet.title}</span>
+            </div>
+          ) : null}
+        </div>
       )}
     </button>
   );

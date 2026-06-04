@@ -3,7 +3,6 @@ import { parsePoints } from '../../utils/parsePoints';
 import './AchievementCard.css';
 
 export function AchievementCard({ item }) {
-  console.log(item);
   const points = item.points ? parsePoints(item.points) : null;
 
   return (

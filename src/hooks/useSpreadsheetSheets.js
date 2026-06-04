@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { fetchSpreadsheetStructure } from '../api/fetchSpreadsheetSheets';
+import { ACHIEVEMENTS_SPREADSHEET_ID } from '../config/googleSheets';
 
-export function useSpreadsheetSheets() {
+export function useSpreadsheetSheets(spreadsheetId = ACHIEVEMENTS_SPREADSHEET_ID) {
   const [rootSheets, setRootSheets] = useState([]);
   const [allSheets, setAllSheets] = useState([]);
   const [sheetsByGid, setSheetsByGid] = useState({});
@@ -13,7 +14,7 @@ export function useSpreadsheetSheets() {
     setError(null);
 
     try {
-      const data = await fetchSpreadsheetStructure({ force: true });
+      const data = await fetchSpreadsheetStructure({ spreadsheetId, force: true });
       setRootSheets(data.rootSheets);
       setAllSheets(data.allSheets);
       setSheetsByGid(data.sheetsByGid);
@@ -25,7 +26,7 @@ export function useSpreadsheetSheets() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [spreadsheetId]);
 
   useEffect(() => {
     load();
@@ -55,4 +56,4 @@ export function useSpreadsheetSheets() {
     getSheetByGid,
     getChildSheets,
   };
-};
+}

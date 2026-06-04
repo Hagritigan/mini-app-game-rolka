@@ -5,10 +5,6 @@ import PersikImage from '../assets/persik.png';
 import { SECTIONS } from '../config/sections';
 
 const SECTION_CONTENT = {
-  east: {
-    header: 'Коллекция наград',
-    text: 'Сундуки, редкие предметы и ежедневные бонусы.',
-  },
   south: {
     header: 'Сражения и рейтинг',
     text: 'Соревнуйтесь с другими игроками и поднимайтесь в таблице лидеров.',
@@ -46,5 +42,5 @@ export const Section = ({ id }) => {
 };
 
 Section.propTypes = {
-  id: PropTypes.oneOf(['east', 'south', 'west']).isRequired,
+  id: PropTypes.oneOf(['south', 'west']).isRequired,
 };

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
 .sheet-list {
   padding: 8px 12px 20px;
 }
@@ -40,11 +42,43 @@
     0 4px 14px color-mix(in srgb, var(--vkui--color_text_primary) 10%, transparent);
 }
 
+.sheet-card__media {
+  position: relative;
+  display: block;
+}
+
 .sheet-card__image {
   display: block;
   width: 100%;
   height: auto;
   vertical-align: middle;
+}
+
+.sheet-card__title-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  background: rgba(155, 58, 72, 0.52);
+  pointer-events: none;
+}
+
+.sheet-card__title {
+  font-family: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: clamp(11px, 3.4vw, 34px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.55),
+    0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .sheet-card__fallback {

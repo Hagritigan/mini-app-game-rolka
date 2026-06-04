@@ -1,9 +1,9 @@
 import {
   Icon28CupOutline,
-  Icon28DiamondOutline,
   Icon28HomeOutline,
   Icon28StarsOutline,
 } from '@vkontakte/icons';
+import { Icon28SwordOutline } from '../icons/Icon28SwordOutline';
 
 export const SECTIONS = [
   {
@@ -15,12 +15,12 @@ export const SECTIONS = [
     Icon: Icon28StarsOutline,
   },
   {
-    id: 'east',
-    title: 'Сокровища',
-    subtitle: 'Награды и коллекция',
+    id: 'inventory',
+    title: 'Снаряжение',
+    subtitle: 'Предметы и снаряжение',
     accent: '#f5a623',
     accentDark: '#d48912',
-    Icon: Icon28DiamondOutline,
+    Icon: Icon28SwordOutline,
   },
   {
     id: 'south',

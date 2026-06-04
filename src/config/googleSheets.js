@@ -1,7 +1,13 @@
 export const ACHIEVEMENTS_SPREADSHEET_ID = '18r-SzbIGcPqMzdwqcLgOQIFD5P1C2ZSxomres_3iWw4';
 
-export const getSpreadsheetEditUrl = () =>
-  `https://docs.google.com/spreadsheets/d/${ACHIEVEMENTS_SPREADSHEET_ID}/edit?hl=ru`;
+export const INVENTORY_SPREADSHEET_ID = '15vRg4u3qDxKxkS_polQbCME7F2gFX8LnHhKMzNXQVpI';
 
+export const getSpreadsheetEditUrl = (spreadsheetId) =>
+  `https://docs.google.com/spreadsheets/d/${spreadsheetId}/edit?hl=ru`;
+
+export const getSheetCsvUrl = (spreadsheetId, gid) =>
+  `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:csv&gid=${gid}`;
+
+/** @deprecated используйте getSpreadsheetEditUrl(ACHIEVEMENTS_SPREADSHEET_ID) */
 export const getAchievementsSheetCsvUrl = (gid) =>
-  `https://docs.google.com/spreadsheets/d/${ACHIEVEMENTS_SPREADSHEET_ID}/gviz/tq?tqx=out:csv&gid=${gid}`;
+  getSheetCsvUrl(ACHIEVEMENTS_SPREADSHEET_ID, gid);

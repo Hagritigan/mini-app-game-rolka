@@ -1,13 +1,13 @@
-import { getAchievementsSheetCsvUrl, getSpreadsheetEditUrl } from '../config/googleSheets';
+import { ACHIEVEMENTS_SPREADSHEET_ID, getSheetCsvUrl, getSpreadsheetEditUrl } from '../config/googleSheets';
 import { parseSheetChildGidsFromCsv } from '../utils/parseSheetChildGids';
 
 const SHEET_META_REGEX =
   /\[(\d+),0,\\"(\d+)\\",\[\{\\"1\\":\[\[0,0,\\"([^"\\]+)\\"\]/g;
 
-let structureCache = null;
+const structureCacheBySpreadsheetId = new Map();
 
-async function fetchAllSheetsFromHtml() {
-  const response = await fetch(getSpreadsheetEditUrl());
+async function fetchAllSheetsFromHtml(spreadsheetId) {
+  const response = await fetch(getSpreadsheetEditUrl(spreadsheetId));
 
   if (!response.ok) {
     throw new Error(`Не удалось получить список листов (${response.status})`);
@@ -45,8 +45,8 @@ async function fetchAllSheetsFromHtml() {
   return sheets;
 }
 
-async function fetchSheetCsv(gid) {
-  const response = await fetch(getAchievementsSheetCsvUrl(gid));
+async function fetchSheetCsv(spreadsheetId, gid) {
+  const response = await fetch(getSheetCsvUrl(spreadsheetId, gid));
 
   if (!response.ok) {
     throw new Error(`Не удалось загрузить лист (${response.status})`);
@@ -58,19 +58,22 @@ async function fetchSheetCsv(gid) {
 /**
  * @returns {{ allSheets: Array, rootSheets: Array, sheetsByGid: Record<string, object> }}
  */
-export async function fetchSpreadsheetStructure({ force = false } = {}) {
-  if (!force && structureCache) {
-    return structureCache;
+export async function fetchSpreadsheetStructure({
+  spreadsheetId = ACHIEVEMENTS_SPREADSHEET_ID,
+  force = false,
+} = {}) {
+  if (!force && structureCacheBySpreadsheetId.has(spreadsheetId)) {
+    return structureCacheBySpreadsheetId.get(spreadsheetId);
   }
 
-  const allSheets = await fetchAllSheetsFromHtml();
+  const allSheets = await fetchAllSheetsFromHtml(spreadsheetId);
   const nestedGids = new Set();
   const groupMeta = {};
 
   await Promise.all(
     allSheets.map(async (sheet) => {
       try {
-        const csv = await fetchSheetCsv(sheet.gid);
+        const csv = await fetchSheetCsv(spreadsheetId, sheet.gid);
         const childGids = parseSheetChildGidsFromCsv(csv);
 
         if (childGids) {
@@ -91,8 +94,9 @@ export async function fetchSpreadsheetStructure({ force = false } = {}) {
   const sheetsByGid = Object.fromEntries(enrichedSheets.map((sheet) => [sheet.gid, sheet]));
   const rootSheets = enrichedSheets.filter((sheet) => !nestedGids.has(sheet.gid));
 
-  structureCache = { allSheets: enrichedSheets, rootSheets, sheetsByGid };
-  return structureCache;
+  const structure = { allSheets: enrichedSheets, rootSheets, sheetsByGid };
+  structureCacheBySpreadsheetId.set(spreadsheetId, structure);
+  return structure;
 }
 
 /** @deprecated используйте fetchSpreadsheetStructure */
