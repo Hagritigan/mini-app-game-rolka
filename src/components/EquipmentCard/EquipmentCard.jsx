@@ -37,22 +37,14 @@ export function EquipmentCard({ item }) {
 
   return (
     <article className="equipment-card">
-      <div className="equipment-card__visual">
-        <div className="equipment-card__glow" aria-hidden />
-        <div
-          className={
-            hasOwner
-              ? 'equipment-card__showcase equipment-card__showcase--with-owner'
-              : 'equipment-card__showcase'
-          }
-        >
-          <CardImage
-            src={item.equipmentImage}
-            alt={item.title || 'Снаряжение'}
-            className="equipment-card__equipment-image"
-            fallbackClassName="equipment-card__equipment-fallback"
-          />
-        </div>
+      <div className="equipment-card__showcase">
+        <CardImage
+          src={item.equipmentImage}
+          alt={item.title || 'Снаряжение'}
+          className="equipment-card__image"
+          fallbackClassName="equipment-card__image-fallback"
+        />
+        <div className="equipment-card__showcase-shade" aria-hidden />
         {hasOwner ? (
           <div className="equipment-card__owner" title="Владелец">
             <CardImage
