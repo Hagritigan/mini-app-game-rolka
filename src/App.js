@@ -9,6 +9,7 @@ import {
   InventorySheetPanel,
   Section,
 } from './panels';
+import { NavigationPanel } from './navigation';
 import { DEFAULT_VIEW_PANELS } from './routes';
 
 export const App = () => {
@@ -23,6 +24,7 @@ export const App = () => {
           <AchievementsSheetPanel id={DEFAULT_VIEW_PANELS.ACHIEVEMENTS_SHEET} />
           <InventoryPanel id={DEFAULT_VIEW_PANELS.INVENTORY} />
           <InventorySheetPanel id={DEFAULT_VIEW_PANELS.INVENTORY_SHEET} />
+          <NavigationPanel id={DEFAULT_VIEW_PANELS.NAVIGATION} />
           <Section id={DEFAULT_VIEW_PANELS.SOUTH} />
           <Section id={DEFAULT_VIEW_PANELS.WEST} />
         </View>

@@ -1,11 +1,12 @@
 import { parseCsv } from './parseCsv';
 import { parseSpreadsheetImageUrl } from './parseSpreadsheetImageUrl';
+import { parseSpreadsheetOwnerField } from './parseSpreadsheetOwnerField';
 
 /**
  * Колонки таблицы снаряжения:
- * A — название, B — описание, C — изображение снаряжения, D — картинка владельца
+ * A — название, B — описание, C — изображение снаряжения, D — владелец (имя со ссылкой)
  */
-export function parseInventoryFromCsv(csvText, sheetId = 'default') {
+export function parseInventoryFromCsv(csvText, sheetId = 'default', ownerUrlsByRow = null) {
   const rows = parseCsv(csvText);
   const items = [];
 
@@ -15,9 +16,10 @@ export function parseInventoryFromCsv(csvText, sheetId = 'default') {
     const title = normalize(row[0] || '');
     const description = normalize(row[1] || '');
     const equipmentImage = parseSpreadsheetImageUrl(row[2] || '');
-    const ownerImage = parseSpreadsheetImageUrl(row[3] || '');
+    const { ownerName, ownerUrl: ownerUrlFromCell } = parseSpreadsheetOwnerField(row[3] || '');
+    const ownerUrl = ownerUrlsByRow?.get(index + 1) || ownerUrlFromCell;
 
-    if (!title && !description && !equipmentImage && !ownerImage) {
+    if (!title && !description && !equipmentImage && !ownerName) {
       return;
     }
 
@@ -26,7 +28,8 @@ export function parseInventoryFromCsv(csvText, sheetId = 'default') {
       title,
       description,
       equipmentImage,
-      ownerImage,
+      ownerName,
+      ownerUrl,
     });
   });
 

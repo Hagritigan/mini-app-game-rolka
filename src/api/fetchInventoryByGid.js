@@ -1,13 +1,31 @@
-import { INVENTORY_SPREADSHEET_ID, getSheetCsvUrl } from '../config/googleSheets';
+import {
+  INVENTORY_SPREADSHEET_ID,
+  getSheetCsvUrl,
+  getSheetXlsxUrl,
+} from '../config/googleSheets';
 import { parseInventoryFromCsv } from '../utils/parseInventorySheet';
+import { parseXlsxColumnHyperlinks } from '../utils/parseXlsxColumnHyperlinks';
 
 export async function fetchInventoryByGid(gid, spreadsheetId = INVENTORY_SPREADSHEET_ID) {
-  const response = await fetch(getSheetCsvUrl(spreadsheetId, gid));
+  const [csvResponse, xlsxResponse] = await Promise.all([
+    fetch(getSheetCsvUrl(spreadsheetId, gid)),
+    fetch(getSheetXlsxUrl(spreadsheetId, gid)),
+  ]);
 
-  if (!response.ok) {
-    throw new Error(`Не удалось загрузить лист (${response.status})`);
+  if (!csvResponse.ok) {
+    throw new Error(`Не удалось загрузить лист (${csvResponse.status})`);
   }
 
-  const csv = await response.text();
-  return parseInventoryFromCsv(csv, gid);
+  const csv = await csvResponse.text();
+  let ownerUrlsByRow = null;
+
+  if (xlsxResponse.ok) {
+    try {
+      ownerUrlsByRow = parseXlsxColumnHyperlinks(await xlsxResponse.arrayBuffer(), 'D');
+    } catch {
+      ownerUrlsByRow = null;
+    }
+  }
+
+  return parseInventoryFromCsv(csv, gid, ownerUrlsByRow);
 }

@@ -1,6 +1,7 @@
 import {
   Icon28CupOutline,
   Icon28HomeOutline,
+  Icon28LocationMapOutline,
   Icon28StarsOutline,
 } from '@vkontakte/icons';
 import { Icon28SwordOutline } from '../icons/Icon28SwordOutline';
@@ -21,6 +22,14 @@ export const SECTIONS = [
     accent: '#f5a623',
     accentDark: '#d48912',
     Icon: Icon28SwordOutline,
+  },
+  {
+    id: 'navigation',
+    title: 'Навигация',
+    subtitle: 'Карта мира и локации',
+    accent: '#4dc2d3',
+    accentDark: '#217f86',
+    Icon: Icon28LocationMapOutline,
   },
   {
     id: 'south',

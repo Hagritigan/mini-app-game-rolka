@@ -16,6 +16,7 @@ export const DEFAULT_VIEW_PANELS = {
   ACHIEVEMENTS_SHEET: 'achievements_sheet',
   INVENTORY: 'inventory',
   INVENTORY_SHEET: 'inventory_sheet',
+  NAVIGATION: 'navigation',
   SOUTH: 'south',
   WEST: 'west',
 };
@@ -38,6 +39,7 @@ export const routes = RoutesConfig.create([
         [],
         ['sheetGid'],
       ),
+      createPanel(DEFAULT_VIEW_PANELS.NAVIGATION, `/${DEFAULT_VIEW_PANELS.NAVIGATION}`, []),
       createPanel(DEFAULT_VIEW_PANELS.SOUTH, `/${DEFAULT_VIEW_PANELS.SOUTH}`, []),
       createPanel(DEFAULT_VIEW_PANELS.WEST, `/${DEFAULT_VIEW_PANELS.WEST}`, []),
     ]),

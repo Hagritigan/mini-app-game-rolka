@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { openExternalLink } from '../../utils/openExternalLink';
 import './EquipmentCard.css';
 
 function CardImage({ src, alt, className, fallbackClassName }) {
@@ -33,7 +34,8 @@ CardImage.propTypes = {
 };
 
 export function EquipmentCard({ item }) {
-  const hasOwner = Boolean(item.ownerImage);
+  const hasOwner = Boolean(item.ownerName);
+  const hasOwnerLink = Boolean(item.ownerName && item.ownerUrl);
 
   return (
     <article className="equipment-card">
@@ -46,13 +48,21 @@ export function EquipmentCard({ item }) {
         />
         <div className="equipment-card__showcase-shade" aria-hidden />
         {hasOwner ? (
-          <div className="equipment-card__owner" title="Владелец">
-            <CardImage
-              src={item.ownerImage}
-              alt=""
-              className="equipment-card__owner-image"
-              fallbackClassName="equipment-card__owner-fallback"
-            />
+          <div className="equipment-card__owner">
+            <span className="equipment-card__owner-label">Владелец</span>
+            {hasOwnerLink ? (
+              <a
+                className="equipment-card__owner-name equipment-card__owner-link"
+                href={item.ownerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) => openExternalLink(item.ownerUrl, event)}
+              >
+                {item.ownerName}
+              </a>
+            ) : (
+              <span className="equipment-card__owner-name">{item.ownerName}</span>
+            )}
           </div>
         ) : null}
       </div>
@@ -73,6 +83,7 @@ EquipmentCard.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     equipmentImage: PropTypes.string,
-    ownerImage: PropTypes.string,
+    ownerName: PropTypes.string,
+    ownerUrl: PropTypes.string,
   }).isRequired,
 };

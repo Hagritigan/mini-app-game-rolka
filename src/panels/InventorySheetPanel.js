@@ -112,7 +112,7 @@ export const InventorySheetPanel = ({ id }) => {
       {!sheetsLoading && !sheetsError && !isGroup && !loading && !error && items.length > 0 ? (
         <>
           <div className="achievements-sheet-panel__count">{formatCount(items.length)}</div>
-          <Group className="achievements-sheet-panel__list inventory-sheet-panel__list">
+          <Group className="achievements-sheet-panel__list">
             {items.map((item) => (
               <EquipmentCard key={item.id} item={item} />
             ))}
