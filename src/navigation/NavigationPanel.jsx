@@ -1,8 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Panel, PanelHeader, PanelHeaderBack, Group, Div, ModalCard, ModalRoot } from '@vkontakte/vkui';
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import { openExternalLink } from '../utils/openExternalLink';
+import { useNavigationMeta } from '../hooks/useNavigationMeta';
+import { IslandCard, IslandMetaBadges, SearchMetaBadges } from './components';
 import { mainLocations } from './data/mainLocations';
 import './NavigationPanel.css';
 
@@ -31,10 +33,12 @@ NavigationLink.propTypes = {
 export const NavigationPanel = ({ id }) => {
 
   const routeNavigator = useRouteNavigator();
+  const { getMetaForLink } = useNavigationMeta();
   const [currentSea, setCurrentSea] = useState(null);
   const [currentWay, setCurrentWay] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
   const [currentIsland, setCurrentIsland] = useState(null);
+  const [metaModal, setMetaModal] = useState(null);
   const [currentOthersWay, setCurrentOthersWay] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -42,6 +46,28 @@ export const NavigationPanel = ({ id }) => {
 
   const seaDetailsRef = useRef(null);
   const wayDetailsRef = useRef(null);
+
+  const openIslandModal = useCallback((island) => {
+    setCurrentIsland(island);
+    setActiveModal('island-modal');
+  }, []);
+
+  const openMetaModal = useCallback((data) => {
+    setMetaModal(data);
+    setActiveModal('meta-modal');
+  }, []);
+
+  const renderIsland = useCallback((island, className = 'islandCard', style) => (
+    <IslandCard
+      key={island.title}
+      island={island}
+      meta={getMetaForLink(island.link)}
+      className={className}
+      style={style}
+      onOpenModal={openIslandModal}
+      onOpenMeta={openMetaModal}
+    />
+  ), [getMetaForLink, openIslandModal, openMetaModal]);
 
   useEffect(() => {
     if (currentSea && seaDetailsRef.current) {
@@ -66,7 +92,7 @@ export const NavigationPanel = ({ id }) => {
   const fourSeas = mainLocations[0].ways.map((sea) => 
     <div key={sea.title}>
       <div style={{display: 'flex', flexDirection: 'column'}}>
-        {sea.islands.map((island) => <NavigationLink className="islandCard" key={island.title} href={island.link}>{island.title}</NavigationLink> )}
+        {sea.islands.map((island) => renderIsland(island))}
       </div>
     </div>
   );
@@ -105,7 +131,7 @@ export const NavigationPanel = ({ id }) => {
   const firstHalf = mainLocations[2].ways.slice(0, 4).map((way) => 
     <div key={way.title}>
       <div style={{display: 'flex', flexDirection: 'column'}}>
-        {way.islands.map((island) => <NavigationLink className="islandCard" key={island.title} href={island.link}>{island.title}</NavigationLink> )}
+        {way.islands.map((island) => renderIsland(island))}
       </div>
     </div>
   )
@@ -113,7 +139,7 @@ export const NavigationPanel = ({ id }) => {
   const secondHalf = mainLocations[2].ways.slice(4, 7).map((way) => 
     <div key={way.title}>
       <div style={{display: 'flex', flexDirection: 'column'}}>
-        {way.islands.map((island) => <NavigationLink className="islandCard" key={island.title} href={island.link}>{island.title}</NavigationLink> )}
+        {way.islands.map((island) => renderIsland(island))}
       </div>
     </div>
   )
@@ -141,23 +167,7 @@ export const NavigationPanel = ({ id }) => {
   const othersLocations = mainLocations[2].ways.slice(7).map((way) => 
     <div key={way.title}>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-        {way.islands.map((island) => 
-          island.modal ? (
-            <div 
-              key={island.title} 
-              className="islandCard othersCard" 
-              onClick={() => {
-                setCurrentIsland(island);
-                setActiveModal('island-modal');
-              }}
-              style={{cursor: 'pointer'}}
-            >
-              {island.title}
-            </div>
-          ) : (
-            <NavigationLink className="islandCard othersCard" key={island.title} href={island.link}>{island.title}</NavigationLink>
-          )
-        )}
+        {way.islands.map((island) => renderIsland(island, 'islandCard othersCard'))}
       </div>
     </div>
   )
@@ -320,7 +330,10 @@ export const NavigationPanel = ({ id }) => {
                 zIndex: 1000,
                 boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
               }}>
-                {searchResults.map((result, index) => (
+                {searchResults.map((result, index) => {
+                  const resultMeta = result.link ? getMetaForLink(result.link) : null;
+
+                  return (
                   <div
                     key={`${result.title}-${index}`}
                     onMouseDown={(event) => event.preventDefault()}
@@ -331,12 +344,13 @@ export const NavigationPanel = ({ id }) => {
                       cursor: 'pointer',
                       display: 'flex',
                       justifyContent: 'space-between',
-                      alignItems: 'center'
+                      alignItems: 'center',
+                      gap: '12px',
                     }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = '#f5f5f5'}
-                    onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f5f5f5'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'white'; }}
                   >
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px'}}>
                       <span style={{fontWeight: 'bold', color: 'black'}}>{result.title}</span>
                       {result.type === 'child' && (
                         <span style={{fontSize: '11px', color: '#888', fontStyle: 'italic'}}>
@@ -348,10 +362,20 @@ export const NavigationPanel = ({ id }) => {
                           Путь
                         </span>
                       )}
+                      {resultMeta ? (
+                        <div onClick={(event) => event.stopPropagation()}>
+                          <SearchMetaBadges
+                            meta={resultMeta}
+                            islandTitle={result.title}
+                            onOpenMeta={openMetaModal}
+                          />
+                        </div>
+                      ) : null}
                     </div>
                     <span style={{fontSize: '12px', color: '#666'}}>{result.location}</span>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>
@@ -372,23 +396,7 @@ export const NavigationPanel = ({ id }) => {
           <div className="mobile-only" ref={seaDetailsRef}>
             <div>
               <div style={{display: 'flex', flexDirection: 'column'}}>
-                {currentSea?.islands.map((island) => 
-                  island.modal ? (
-                    <div 
-                      key={island.title} 
-                      className="islandCard" 
-                      onClick={() => {
-                        setCurrentIsland(island);
-                        setActiveModal('island-modal');
-                      }}
-                      style={{cursor: 'pointer'}}
-                    >
-                      {island.title}
-                    </div>
-                  ) : (
-                    <NavigationLink className="islandCard" key={island.title} href={island.link}>{island.title}</NavigationLink>
-                  )
-                )}
+                {currentSea?.islands.map((island) => renderIsland(island))}
               </div>
             </div>
           </div>
@@ -404,6 +412,17 @@ export const NavigationPanel = ({ id }) => {
           <div className="reverseMountain">
             <NavigationLink className="reverseMountainButton" href="https://vk.com/topic-36291248_32959558" style={{ textDecoration: 'none' }}>
               <div>{mainLocations[1].title}</div>
+              {(() => {
+                const meta = getMetaForLink('https://vk.com/topic-36291248_32959558');
+                if (!meta?.hasDozor && !meta?.hasPp) return null;
+                return (
+                  <IslandMetaBadges
+                    meta={meta}
+                    islandTitle={mainLocations[1].title}
+                    onOpenMeta={openMetaModal}
+                  />
+                );
+              })()}
             </NavigationLink>
           </div>
           <img className='blueBorder' src="/navigation/blue-border.jpg" alt="grandLine" />
@@ -427,23 +446,7 @@ export const NavigationPanel = ({ id }) => {
           <div className="mobile-only" ref={wayDetailsRef}>
             <div>
               <div style={{display: 'flex', flexDirection: 'column'}}>
-                {currentWay?.islands.map((island) => 
-                  island.modal ? (
-                    <div 
-                      key={island.title} 
-                      className="islandCard" 
-                      onClick={() => {
-                        setCurrentIsland(island);
-                        setActiveModal('island-modal');
-                      }}
-                      style={{cursor: 'pointer'}}
-                    >
-                      {island.title}
-                    </div>
-                  ) : (
-                    <NavigationLink className="islandCard" key={island.title} href={island.link}>{island.title}</NavigationLink>
-                  )
-                )}
+                {currentWay?.islands.map((island) => renderIsland(island))}
               </div>
             </div>
           </div>
@@ -473,30 +476,7 @@ export const NavigationPanel = ({ id }) => {
           onClose={() => setActiveModal(null)}
         >
           <div style={{display: 'flex', flexDirection: 'column', padding: '8px 0', maxHeight: '70vh', overflowY: 'auto', WebkitOverflowScrolling: 'touch'}}>
-            {currentSea?.islands.map((island) => (
-              island.modal ? (
-                <div 
-                  key={island.title} 
-                  className="islandCard" 
-                  onClick={() => {
-                    setCurrentIsland(island);
-                    setActiveModal('island-modal');
-                  }}
-                  style={{cursor: 'pointer'}}
-                >
-                  {island.title}
-                </div>
-              ) : (
-                <NavigationLink
-                  className="islandCard"
-                  key={island.title}
-                  href={island.link}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  {island.title}
-                </NavigationLink>
-              )
-            ))}
+            {currentSea?.islands.map((island) => renderIsland(island))}
           </div>
         </ModalCard>
         
@@ -506,30 +486,7 @@ export const NavigationPanel = ({ id }) => {
           onClose={() => setActiveModal(null)}
         >
           <div style={{display: 'flex', flexDirection: 'column', padding: '8px 0', maxHeight: '70vh', overflowY: 'auto', WebkitOverflowScrolling: 'touch'}}>
-            {currentWay?.islands.map((island) => (
-              island.modal ? (
-                <div 
-                  key={island.title} 
-                  className="islandCard" 
-                  onClick={() => {
-                    setCurrentIsland(island);
-                    setActiveModal('island-modal');
-                  }}
-                  style={{cursor: 'pointer', margin: '8px 0'}}
-                >
-                  {island.title}
-                </div>
-              ) : (
-                <NavigationLink
-                  className="islandCard"
-                  key={island.title}
-                  href={island.link}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  {island.title}
-                </NavigationLink>
-              )
-            ))}
+            {currentWay?.islands.map((island) => renderIsland(island, 'islandCard', { margin: '8px 0' }))}
           </div>
         </ModalCard>
         
@@ -540,22 +497,23 @@ export const NavigationPanel = ({ id }) => {
         >
           <div style={{display: 'flex', flexDirection: 'column', padding: '8px 0', maxHeight: '70vh', overflowY: 'auto', WebkitOverflowScrolling: 'touch'}}>
             {currentIsland?.childrens && currentIsland.childrens.length > 0 ? (
-              currentIsland.childrens.map((child) => (
-                <NavigationLink
-                  className="islandCard"
-                  key={child.title}
-                  href={child.link}
-                  style={{ textDecoration: 'none', color: 'inherit', margin: '8px 0' }}
-                >
-                  {child.title}
-                </NavigationLink>
-              ))
+              currentIsland.childrens.map((child) => renderIsland(child, 'islandCard', { margin: '8px 0' }))
             ) : (
               <div style={{textAlign: 'center', color: '#666', padding: '20px'}}>
                 Нет доступных островов
               </div>
             )}
           </div>
+        </ModalCard>
+        <ModalCard
+          id="meta-modal"
+          header={metaModal?.title}
+          onClose={() => {
+            setActiveModal(null);
+            setMetaModal(null);
+          }}
+        >
+          <div className="navigation-meta-modal__text">{metaModal?.text}</div>
         </ModalCard>
       </ModalRoot>
       </div>

@@ -2,6 +2,10 @@ export const ACHIEVEMENTS_SPREADSHEET_ID = '18r-SzbIGcPqMzdwqcLgOQIFD5P1C2ZSxomr
 
 export const INVENTORY_SPREADSHEET_ID = '15vRg4u3qDxKxkS_polQbCME7F2gFX8LnHhKMzNXQVpI';
 
+export const NAVIGATION_SPREADSHEET_ID = '1e-y_ddIUAJoJ_ep4qfA4GuBd8hWksIocqWSdjEsUK1o';
+
+export const NAVIGATION_SHEET_GID = '0';
+
 export const getSpreadsheetEditUrl = (spreadsheetId) =>
   `https://docs.google.com/spreadsheets/d/${spreadsheetId}/edit?hl=ru`;
 
