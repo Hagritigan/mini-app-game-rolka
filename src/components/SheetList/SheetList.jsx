@@ -6,6 +6,28 @@ import {
 } from '../../utils/getSheetImageUrl';
 import './SheetList.css';
 
+function SimpleSheetCard({ sheet, onSelect }) {
+  return (
+    <button
+      type="button"
+      className="sheet-card sheet-card--simple"
+      aria-label={sheet.title}
+      onClick={() => onSelect(sheet.gid)}
+    >
+      <span className="sheet-card__simple-title">{sheet.title}</span>
+      <span className="sheet-card__simple-chevron" aria-hidden />
+    </button>
+  );
+}
+
+SimpleSheetCard.propTypes = {
+  sheet: PropTypes.shape({
+    gid: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  onSelect: PropTypes.func.isRequired,
+};
+
 function SheetCard({ sheet, onSelect }) {
   const [imageSrc, setImageSrc] = useState(() => getSheetImageUrl(sheet.gid));
   const [hasError, setHasError] = useState(false);
@@ -64,13 +86,15 @@ SheetCard.propTypes = {
   onSelect: PropTypes.func.isRequired,
 };
 
-export function SheetList({ sheets, onSelect, hint }) {
+export function SheetList({ sheets, onSelect, hint, variant = 'image' }) {
+  const Card = variant === 'simple' ? SimpleSheetCard : SheetCard;
+
   return (
-    <div className="sheet-list">
+    <div className={`sheet-list${variant === 'simple' ? ' sheet-list--simple' : ''}`}>
       {hint ? <p className="sheet-list__hint">{hint}</p> : null}
       <div className="sheet-list__grid">
         {sheets.map((sheet) => (
-          <SheetCard key={sheet.gid} sheet={sheet} onSelect={onSelect} />
+          <Card key={sheet.gid} sheet={sheet} onSelect={onSelect} />
         ))}
       </div>
     </div>
@@ -86,4 +110,5 @@ SheetList.propTypes = {
   ).isRequired,
   onSelect: PropTypes.func.isRequired,
   hint: PropTypes.string,
+  variant: PropTypes.oneOf(['image', 'simple']),
 };

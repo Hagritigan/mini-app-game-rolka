@@ -1,37 +1,30 @@
-import { useCallback, useEffect, useState } from 'react';
-import { fetchAchievementsByGid } from '../api/fetchAchievementsByGid';
-import { ACHIEVEMENTS_SPREADSHEET_ID } from '../config/googleSheets';
+import { useCallback, useEffect, useSyncExternalStore } from 'react';
+import { achievementsDataStore } from '../api/cache';
 
-export function useAchievementsSheet(gid, spreadsheetId = ACHIEVEMENTS_SPREADSHEET_ID) {
-  const [achievements, setAchievements] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const load = useCallback(async () => {
-    if (!gid) {
-      setAchievements([]);
-      setError(null);
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
-    setError(null);
-
-    try {
-      const data = await fetchAchievementsByGid(gid, spreadsheetId);
-      setAchievements(data);
-    } catch (err) {
-      setAchievements([]);
-      setError(err instanceof Error ? err.message : 'Ошибка загрузки');
-    } finally {
-      setLoading(false);
-    }
-  }, [gid, spreadsheetId]);
+export function useAchievementsSheet(gid) {
+  const state = useSyncExternalStore(
+    achievementsDataStore.subscribe,
+    achievementsDataStore.getState,
+    achievementsDataStore.getState,
+  );
 
   useEffect(() => {
-    load();
-  }, [load]);
+    achievementsDataStore.ensureLoaded();
+  }, []);
 
-  return { achievements, loading, error, reload: load };
+  const achievements = gid ? (state.data?.sheets?.[gid]?.achievements ?? []) : [];
+  const hasCachedSheet = Boolean(gid && state.data?.sheets?.[gid]);
+  const loading = state.loading || (Boolean(gid) && !hasCachedSheet && !state.error);
+
+  const reload = useCallback(() => {
+    achievementsDataStore.reload();
+  }, []);
+
+  return {
+    achievements,
+    loading,
+    refreshing: state.refreshing,
+    error: state.error,
+    reload,
+  };
 }

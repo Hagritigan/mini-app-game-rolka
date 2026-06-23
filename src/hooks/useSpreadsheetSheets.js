@@ -1,36 +1,27 @@
-import { useCallback, useEffect, useState } from 'react';
-import { fetchSpreadsheetStructure } from '../api/fetchSpreadsheetSheets';
-import { ACHIEVEMENTS_SPREADSHEET_ID } from '../config/googleSheets';
+import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
+import { achievementsDataStore, inventoryDataStore } from '../api/cache';
+import { ACHIEVEMENTS_SPREADSHEET_ID, INVENTORY_SPREADSHEET_ID } from '../config/googleSheets';
+
+function getStoreForSpreadsheet(spreadsheetId) {
+  if (spreadsheetId === INVENTORY_SPREADSHEET_ID) {
+    return inventoryDataStore;
+  }
+
+  return achievementsDataStore;
+}
 
 export function useSpreadsheetSheets(spreadsheetId = ACHIEVEMENTS_SPREADSHEET_ID) {
-  const [rootSheets, setRootSheets] = useState([]);
-  const [allSheets, setAllSheets] = useState([]);
-  const [sheetsByGid, setSheetsByGid] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const load = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      const data = await fetchSpreadsheetStructure({ spreadsheetId, force: true });
-      setRootSheets(data.rootSheets);
-      setAllSheets(data.allSheets);
-      setSheetsByGid(data.sheetsByGid);
-    } catch (err) {
-      setRootSheets([]);
-      setAllSheets([]);
-      setSheetsByGid({});
-      setError(err instanceof Error ? err.message : 'Ошибка загрузки');
-    } finally {
-      setLoading(false);
-    }
-  }, [spreadsheetId]);
+  const store = getStoreForSpreadsheet(spreadsheetId);
+  const state = useSyncExternalStore(store.subscribe, store.getState, store.getState);
 
   useEffect(() => {
-    load();
-  }, [load]);
+    store.ensureLoaded();
+  }, [store]);
+
+  const structure = state.data?.structure;
+  const rootSheets = structure?.rootSheets ?? [];
+  const allSheets = structure?.allSheets ?? [];
+  const sheetsByGid = structure?.sheetsByGid ?? {};
 
   const getSheetByGid = useCallback(
     (gid) => sheetsByGid[gid] ?? allSheets.find((sheet) => sheet.gid === gid),
@@ -45,14 +36,19 @@ export function useSpreadsheetSheets(spreadsheetId = ACHIEVEMENTS_SPREADSHEET_ID
     [getSheetByGid],
   );
 
+  const reload = useCallback(() => {
+    store.reload();
+  }, [store]);
+
   return {
     sheets: rootSheets,
     rootSheets,
     allSheets,
     sheetsByGid,
-    loading,
-    error,
-    reload: load,
+    loading: state.loading,
+    refreshing: state.refreshing,
+    error: state.error,
+    reload,
     getSheetByGid,
     getChildSheets,
   };

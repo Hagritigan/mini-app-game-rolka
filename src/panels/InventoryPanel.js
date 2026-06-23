@@ -51,7 +51,12 @@ export const InventoryPanel = ({ id }) => {
       ) : null}
 
       {!loading && !error && rootSheets.length > 0 ? (
-        <SheetList sheets={rootSheets} onSelect={openSheet} hint="Выберите раздел" />
+        <SheetList
+          sheets={rootSheets}
+          onSelect={openSheet}
+          hint="Выберите раздел"
+          variant="simple"
+        />
       ) : null}
     </Panel>
   );

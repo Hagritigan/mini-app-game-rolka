@@ -1,37 +1,30 @@
-import { useCallback, useEffect, useState } from 'react';
-import { fetchInventoryByGid } from '../api/fetchInventoryByGid';
-import { INVENTORY_SPREADSHEET_ID } from '../config/googleSheets';
+import { useCallback, useEffect, useSyncExternalStore } from 'react';
+import { inventoryDataStore } from '../api/cache';
 
-export function useInventorySheet(gid, spreadsheetId = INVENTORY_SPREADSHEET_ID) {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const load = useCallback(async () => {
-    if (!gid) {
-      setItems([]);
-      setError(null);
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
-    setError(null);
-
-    try {
-      const data = await fetchInventoryByGid(gid, spreadsheetId);
-      setItems(data);
-    } catch (err) {
-      setItems([]);
-      setError(err instanceof Error ? err.message : 'Ошибка загрузки');
-    } finally {
-      setLoading(false);
-    }
-  }, [gid, spreadsheetId]);
+export function useInventorySheet(gid) {
+  const state = useSyncExternalStore(
+    inventoryDataStore.subscribe,
+    inventoryDataStore.getState,
+    inventoryDataStore.getState,
+  );
 
   useEffect(() => {
-    load();
-  }, [load]);
+    inventoryDataStore.ensureLoaded();
+  }, []);
 
-  return { items, loading, error, reload: load };
+  const items = gid ? (state.data?.sheets?.[gid]?.items ?? []) : [];
+  const hasCachedSheet = Boolean(gid && state.data?.sheets?.[gid]);
+  const loading = state.loading || (Boolean(gid) && !hasCachedSheet && !state.error);
+
+  const reload = useCallback(() => {
+    inventoryDataStore.reload();
+  }, []);
+
+  return {
+    items,
+    loading,
+    refreshing: state.refreshing,
+    error: state.error,
+    reload,
+  };
 }

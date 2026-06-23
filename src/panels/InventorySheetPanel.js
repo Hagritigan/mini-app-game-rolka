@@ -78,7 +78,12 @@ export const InventorySheetPanel = ({ id }) => {
 
       {!sheetsLoading && !sheetsError && isGroup ? (
         childSheets.length > 0 ? (
-          <SheetList sheets={childSheets} onSelect={openSheet} hint="Выберите раздел" />
+          <SheetList
+            sheets={childSheets}
+            onSelect={openSheet}
+            hint="Выберите раздел"
+            variant="simple"
+          />
         ) : (
           <Placeholder header="Список пуст">
             В ячейке A1 указаны листы, но они не найдены в таблице.
