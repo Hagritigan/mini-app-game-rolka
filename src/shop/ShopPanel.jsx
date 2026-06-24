@@ -15,7 +15,7 @@ import {
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import { useShopData } from '../hooks/useShopData';
 import { filterShopItems, groupShopItemsByCategory } from '../utils/parseShopSheet';
-import { ShopProductCard } from './components';
+import { ShopOrderForm, ShopProductCard } from './components';
 import './ShopPanel.css';
 
 function formatCount(count) {
@@ -48,6 +48,11 @@ export const ShopPanel = ({ id }) => {
   const openProduct = (product) => {
     setSelectedProduct(product);
     setActiveModal('product-modal');
+  };
+
+  const closeProductModal = () => {
+    setActiveModal(null);
+    setSelectedProduct(null);
   };
 
   return (
@@ -114,30 +119,33 @@ export const ShopPanel = ({ id }) => {
         ) : null}
       </div>
 
-      <ModalRoot activeModal={activeModal} onClose={() => setActiveModal(null)}>
+      <ModalRoot activeModal={activeModal} onClose={closeProductModal}>
         <ModalCard
           id="product-modal"
           header={selectedProduct?.name}
-          onClose={() => setActiveModal(null)}
+          onClose={closeProductModal}
         >
-          <div className="shop-product-modal">
-            {selectedProduct?.lot ? (
-              <div className="shop-product-modal__meta">
-                <span className="shop-product-modal__lot">Лот {selectedProduct.lot}</span>
-                {selectedProduct.category ? (
-                  <span className="shop-product-modal__category">{selectedProduct.category}</span>
-                ) : null}
-              </div>
-            ) : null}
-            <div className="shop-product-modal__price">{selectedProduct?.price}</div>
-            {selectedProduct?.description ? (
-              <p className="shop-product-modal__description">{selectedProduct.description}</p>
-            ) : (
-              <p className="shop-product-modal__description shop-product-modal__description--empty">
-                Описание не указано.
-              </p>
-            )}
-          </div>
+          {selectedProduct ? (
+            <div className="shop-product-modal">
+              {selectedProduct.lot ? (
+                <div className="shop-product-modal__meta">
+                  <span className="shop-product-modal__lot">Лот {selectedProduct.lot}</span>
+                  {selectedProduct.category ? (
+                    <span className="shop-product-modal__category">{selectedProduct.category}</span>
+                  ) : null}
+                </div>
+              ) : null}
+              <div className="shop-product-modal__price">{selectedProduct.price}</div>
+              {selectedProduct.description ? (
+                <p className="shop-product-modal__description">{selectedProduct.description}</p>
+              ) : (
+                <p className="shop-product-modal__description shop-product-modal__description--empty">
+                  Описание не указано.
+                </p>
+              )}
+              <ShopOrderForm key={selectedProduct.id} product={selectedProduct} />
+            </div>
+          ) : null}
         </ModalCard>
       </ModalRoot>
     </Panel>

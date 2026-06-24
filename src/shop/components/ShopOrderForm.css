@@ -1,0 +1,31 @@
+.shop-order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--vkui--color_separator_primary);
+}
+
+.shop-order-form__title {
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.shop-order-form__message {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.shop-order-form__message--error {
+  background: rgba(255, 59, 48, 0.08);
+  color: #d63b3b;
+}
+
+.shop-order-form__message--success {
+  background: rgba(47, 158, 68, 0.1);
+  color: #2f9e44;
+}
