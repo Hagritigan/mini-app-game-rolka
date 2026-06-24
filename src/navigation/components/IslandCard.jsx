@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { openExternalLink } from '../../utils/openExternalLink';
-import { IslandMetaBadges } from './IslandMetaBadges';
+import { getInfluenceCount, getInfluenceStyle } from '../utils/islandInfluence';
 import './IslandCard.css';
 
 function NavigationLink({ href, className, style, children, onClick }) {
@@ -29,33 +29,39 @@ NavigationLink.propTypes = {
   onClick: PropTypes.func,
 };
 
-function IslandBadges({ meta, onOpenMeta, islandTitle }) {
-  return <IslandMetaBadges meta={meta} islandTitle={islandTitle} onOpenMeta={onOpenMeta} />;
-}
+const metaShape = PropTypes.shape({
+  influences: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string,
+    text: PropTypes.string,
+    color: PropTypes.string,
+  })),
+  hasDozor: PropTypes.bool,
+  hasPp: PropTypes.bool,
+  dozor: PropTypes.string,
+  pp: PropTypes.string,
+});
 
-IslandBadges.propTypes = {
-  meta: PropTypes.shape({
-    hasDozor: PropTypes.bool,
-    hasPp: PropTypes.bool,
-    dozor: PropTypes.string,
-    pp: PropTypes.string,
-  }),
-  onOpenMeta: PropTypes.func,
-  islandTitle: PropTypes.string.isRequired,
-};
+function IslandCardInner({
+  island,
+  className,
+  style,
+  onOpenModal,
+  influenceCount,
+  title,
+}) {
+  const cardClassName = [
+    'island-card',
+    className,
+    influenceCount === 0 ? 'island-card--neutral' : 'island-card--influenced',
+  ].filter(Boolean).join(' ');
 
-export function IslandCard({ island, meta, className = 'islandCard', style, onOpenModal, onOpenMeta }) {
-  const content = (
-    <>
-      <span className="island-card__title">{island.title}</span>
-      <IslandBadges meta={meta} onOpenMeta={onOpenMeta} islandTitle={island.title} />
-    </>
-  );
+  const content = <span className="island-card__title">{title}</span>;
 
   if (island.modal) {
     return (
       <div
-        className={`island-card island-card--modal ${className}`}
+        className={cardClassName}
         style={{ cursor: 'pointer', ...style }}
         onClick={() => onOpenModal?.(island)}
       >
@@ -66,16 +72,63 @@ export function IslandCard({ island, meta, className = 'islandCard', style, onOp
 
   if (!island.link) {
     return (
-      <div className={`island-card ${className}`} style={style}>
+      <div className={cardClassName} style={style}>
         {content}
       </div>
     );
   }
 
   return (
-    <NavigationLink className={`island-card ${className}`} href={island.link} style={style}>
+    <NavigationLink className={cardClassName} href={island.link} style={style}>
       {content}
     </NavigationLink>
+  );
+}
+
+IslandCardInner.propTypes = {
+  island: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    link: PropTypes.string,
+    modal: PropTypes.bool,
+    childrens: PropTypes.array,
+  }).isRequired,
+  className: PropTypes.string,
+  style: PropTypes.object,
+  onOpenModal: PropTypes.func,
+  influenceCount: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export function IslandCard({ island, meta, className = 'islandCard', style, onOpenModal }) {
+  const influenceCount = getInfluenceCount(meta);
+  const influenceStyle = getInfluenceStyle(meta);
+  const mergedStyle = { ...influenceStyle, ...style };
+
+  if (influenceCount >= 2) {
+    return (
+      <div className="island-card-frame island-card-frame--multi" style={mergedStyle}>
+        <IslandCardInner
+          island={island}
+          className={className}
+          onOpenModal={onOpenModal}
+          influenceCount={influenceCount}
+          title={island.title}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="island-card-frame" style={influenceCount === 1 ? influenceStyle : undefined}>
+      <IslandCardInner
+        island={island}
+        className={className}
+        style={influenceCount === 1 ? mergedStyle : style}
+        onOpenModal={onOpenModal}
+        influenceCount={influenceCount}
+        title={island.title}
+      />
+    </div>
   );
 }
 
@@ -86,14 +139,8 @@ IslandCard.propTypes = {
     modal: PropTypes.bool,
     childrens: PropTypes.array,
   }).isRequired,
-  meta: PropTypes.shape({
-    hasDozor: PropTypes.bool,
-    hasPp: PropTypes.bool,
-    dozor: PropTypes.string,
-    pp: PropTypes.string,
-  }),
+  meta: metaShape,
   className: PropTypes.string,
   style: PropTypes.object,
   onOpenModal: PropTypes.func,
-  onOpenMeta: PropTypes.func,
 };

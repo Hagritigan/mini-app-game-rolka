@@ -6,6 +6,10 @@ export const NAVIGATION_SPREADSHEET_ID = '1e-y_ddIUAJoJ_ep4qfA4GuBd8hWksIocqWSdj
 
 export const NAVIGATION_SHEET_GID = '0';
 
+export const SHOP_SPREADSHEET_ID = '1Y-yHRPy0dLHoZnSrzgzcoj_xb5BcFHdFaH9WiHbSU1A';
+
+export const SHOP_SHEET_GID = '0';
+
 export const getSpreadsheetEditUrl = (spreadsheetId) =>
   `https://docs.google.com/spreadsheets/d/${spreadsheetId}/edit?hl=ru`;
 

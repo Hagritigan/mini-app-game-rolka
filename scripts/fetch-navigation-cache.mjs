@@ -1,90 +1,54 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import {
+  applyNavigationSheetColors,
+  parseNavigationSheet,
+} from '../src/utils/parseNavigationSheet.js';
 
 const NAVIGATION_SPREADSHEET_ID = '1e-y_ddIUAJoJ_ep4qfA4GuBd8hWksIocqWSdjEsUK1o';
+const NAVIGATION_SHEET_GID = '0';
 
-function parseCsv(text) {
-  const rows = [];
-  let row = [];
-  let field = '';
-  let inQuotes = false;
-  for (let i = 0; i < text.length; i += 1) {
-    const char = text[i];
-    const next = text[i + 1];
-    if (inQuotes) {
-      if (char === '"' && next === '"') { field += '"'; i += 1; }
-      else if (char === '"') inQuotes = false;
-      else field += char;
-      continue;
-    }
-    if (char === '"') inQuotes = true;
-    else if (char === ',') { row.push(field); field = ''; }
-    else if (char === '\r' && next === '\n') { row.push(field); rows.push(row); row = []; field = ''; i += 1; }
-    else if (char === '\n' || char === '\r') { row.push(field); rows.push(row); row = []; field = ''; }
-    else field += char;
-  }
-  if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
-  return rows;
-}
+const getSheetCsvUrl = (spreadsheetId, gid) =>
+  `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:csv&gid=${gid}`;
 
-function normalizeTopicLink(link) {
-  return String(link || '').trim().toLowerCase().replace(/\/$/, '');
-}
-
-function normalizeCell(value) {
-  return String(value || '').replace(/\s+/g, ' ').trim();
-}
-
-function parseNavigationSheet(csvText) {
-  const rows = parseCsv(csvText).slice(1);
-  const items = [];
-  const byLink = {};
-
-  rows.forEach((row, index) => {
-    const title = normalizeCell(row[0]);
-    const link = normalizeCell(row[1]);
-    const dozor = normalizeCell(row[2]);
-    const pp = normalizeCell(row[3]);
-
-    if (!link) return;
-
-    const item = {
-      id: `navigation-${index}-${normalizeTopicLink(link)}`,
-      title,
-      link,
-      dozor,
-      pp,
-      hasDozor: Boolean(dozor),
-      hasPp: Boolean(pp),
-    };
-
-    items.push(item);
-    byLink[normalizeTopicLink(link)] = item;
-  });
-
-  return { items, byLink };
-}
+const getSheetXlsxUrl = (spreadsheetId, gid) =>
+  `https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=xlsx&gid=${gid}`;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, '../public/data');
 mkdirSync(outDir, { recursive: true });
 
-const response = await fetch(
-  `https://docs.google.com/spreadsheets/d/${NAVIGATION_SPREADSHEET_ID}/gviz/tq?tqx=out:csv&gid=0`,
-);
+const [csvResponse, xlsxResponse] = await Promise.all([
+  fetch(getSheetCsvUrl(NAVIGATION_SPREADSHEET_ID, NAVIGATION_SHEET_GID)),
+  fetch(getSheetXlsxUrl(NAVIGATION_SPREADSHEET_ID, NAVIGATION_SHEET_GID)),
+]);
 
-if (!response.ok) {
-  throw new Error(`Failed to fetch navigation sheet (${response.status})`);
+if (!csvResponse.ok) {
+  throw new Error(`Failed to fetch navigation sheet (${csvResponse.status})`);
 }
 
-const { items, byLink } = parseNavigationSheet(await response.text());
+const { items, byLink, influenceColumns: csvInfluenceColumns } = parseNavigationSheet(await csvResponse.text());
+let colors = null;
+let influenceColumns = csvInfluenceColumns;
+
+if (xlsxResponse.ok) {
+  colors = applyNavigationSheetColors(items, await xlsxResponse.arrayBuffer(), csvInfluenceColumns);
+  influenceColumns = colors.influenceColumns;
+}
+
 const data = {
   updatedAt: new Date().toISOString(),
   spreadsheetId: NAVIGATION_SPREADSHEET_ID,
+  influenceColumns,
   items,
   byLink,
+  colors,
 };
 
 writeFileSync(join(outDir, 'navigation.json'), JSON.stringify(data, null, 2), 'utf8');
-console.log(`navigation.json: ${items.length} islands`);
+console.log(`navigation.json: ${items.length} islands, ${influenceColumns.length} influence columns`);
+
+if (colors) {
+  console.log(`palette: ${JSON.stringify(colors.palette)}`);
+}

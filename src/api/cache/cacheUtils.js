@@ -3,10 +3,9 @@ export function getComparablePayload(data) {
     return '';
   }
 
-  return JSON.stringify({
-    structure: data.structure,
-    sheets: data.sheets,
-  });
+  const { updatedAt, ...payload } = data;
+
+  return JSON.stringify(payload);
 }
 
 export function isDataUpdated(previous, next) {

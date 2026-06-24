@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useMemo, useSyncExternalStore } from 'react';
 import { navigationDataStore } from '../api/cache';
 import { getNavigationMetaForLink } from '../utils/parseNavigationSheet';
+import { getInfluenceLegendItems } from '../navigation/utils/islandInfluence';
 
 export function useNavigationMeta() {
   const state = useSyncExternalStore(
@@ -22,9 +23,15 @@ export function useNavigationMeta() {
     navigationDataStore.reload();
   }, []);
 
+  const legendItems = useMemo(
+    () => getInfluenceLegendItems(state.data),
+    [state.data],
+  );
+
   return {
     items: state.data?.items ?? [],
     byLink: state.data?.byLink ?? {},
+    legendItems,
     loading: state.loading,
     refreshing: state.refreshing,
     error: state.error,

@@ -1,944 +1,1244 @@
 {
-  "updatedAt": "2026-06-23T07:02:38.780Z",
+  "updatedAt": "2026-06-24T17:34:07.766Z",
   "spreadsheetId": "1e-y_ddIUAJoJ_ep4qfA4GuBd8hWksIocqWSdjEsUK1o",
+  "influenceColumns": [
+    {
+      "column": "C",
+      "label": "Присутвие Дозора",
+      "id": "dozor"
+    },
+    {
+      "column": "D",
+      "label": "Присутвие ПП",
+      "id": "pp"
+    },
+    {
+      "column": "E",
+      "label": "Акира",
+      "id": "акира"
+    },
+    {
+      "column": "F",
+      "label": "А если ещё?",
+      "id": "а-если-ещё"
+    }
+  ],
   "items": [
     {
-      "id": "navigation-0-https://vk.com/topic-36291248_38851753",
-      "title": "Спайдер Майлс",
-      "link": "https://vk.com/topic-36291248_38851753",
-      "dozor": "Число дозорных не превышает 100 человек",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-1-https://vk.com/topic-36291248_32878443",
-      "title": "Месса",
-      "link": "https://vk.com/topic-36291248_32878443",
-      "dozor": "Очень часто здесь можно встретить Дозор. Они патрулируют порт, и поселение, и совсем немного уходят в лес. Но на этом их патруль заканчивается.",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-2-https://vk.com/topic-36291248_32878471",
-      "title": "КокХол",
-      "link": "https://vk.com/topic-36291248_32878471",
-      "dozor": "Дозор: 3000",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-3-https://vk.com/topic-36291248_38851755",
-      "title": "Элзи",
-      "link": "https://vk.com/topic-36291248_38851755",
-      "dozor": "Количество дозора: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-4-https://vk.com/topic-36291248_32878478",
-      "title": "Норд-Гранд",
-      "link": "https://vk.com/topic-36291248_32878478",
-      "dozor": "Дозор – 5000 солдат",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-5-https://vk.com/topic-36291248_32878486",
-      "title": "Остров Рассвета",
-      "link": "https://vk.com/topic-36291248_32878486",
-      "dozor": "~800 Дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-6-https://vk.com/topic-36291248_32878491",
-      "title": "Шеллтаун",
-      "link": "https://vk.com/topic-36291248_32878491",
-      "dozor": "89 000 Дозорных.",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-7-https://vk.com/topic-36291248_38725952",
-      "title": "Острова Орган",
-      "link": "https://vk.com/topic-36291248_38725952",
-      "dozor": "в гавани нередко останавливаются корабли Защитников Справедливости: сразу после успешной операции также был расчищен утёс близ города, на котором теперь возвышается небольшой, но достаточно грозный форт, служащий оперативной базой для действий Дозора в этом регионе.",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-8-https://vk.com/topic-36291248_38725953",
-      "title": "Заводной остров",
-      "link": "https://vk.com/topic-36291248_38725953",
-      "dozor": "Количество дозора: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-9-https://vk.com/topic-36291248_38725957",
-      "title": "Миррорбол",
-      "link": "https://vk.com/topic-36291248_38725957",
-      "dozor": "Дозорные: 1.5к",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-10-https://vk.com/topic-36291248_32878663",
-      "title": "Логтаун",
-      "link": "https://vk.com/topic-36291248_32878663",
-      "dozor": "Количество дозорных: ~800",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-11-https://vk.com/topic-36291248_38735740",
-      "title": "Бриндо",
-      "link": "https://vk.com/topic-36291248_38735740",
-      "dozor": "Количество дозора: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-12-https://vk.com/topic-36291248_32878880",
-      "title": "Тороа",
-      "link": "https://vk.com/topic-36291248_32878880",
-      "dozor": "20к дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-13-https://vk.com/topic-36291248_32878892",
-      "title": "Лас Кэмп",
-      "link": "https://vk.com/topic-36291248_32878892",
-      "dozor": "Дозор: 8-10 человек",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-14-https://vk.com/topic-36291248_38735738",
-      "title": "Страна Цветов",
-      "link": "https://vk.com/topic-36291248_38735738",
-      "dozor": "Количество дозорных: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-15-https://vk.com/topic-36291248_32878895",
-      "title": "Мертольф",
-      "link": "https://vk.com/topic-36291248_32878895",
-      "dozor": "Дозорных 1000 человек и их число растет",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-16-https://vk.com/topic-36291248_38735739",
-      "title": "Хильдора",
-      "link": "https://vk.com/topic-36291248_38735739",
-      "dozor": "Мир и покой данного места охраняется крупной базой дозора",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-17-https://vk.com/topic-36291248_32878901",
-      "title": "Батерилла",
-      "link": "https://vk.com/topic-36291248_32878901",
-      "dozor": "29к дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-18-https://vk.com/topic-36291248_32878911",
-      "title": "Королевство Финилейв",
-      "link": "https://vk.com/topic-36291248_32878911",
-      "dozor": "1к дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-19-https://vk.com/topic-36291248_38856024",
-      "title": "Архипелаг Fumer",
-      "link": "https://vk.com/topic-36291248_38856024",
-      "dozor": "Количество дозорных: неизвестно",
-      "pp": "Влияние: остров под влиянием Преступного Подполья, 3 степень",
-      "hasDozor": true,
-      "hasPp": true
-    },
-    {
-      "id": "navigation-20-https://vk.com/topic-36291248_32959558",
-      "title": "Мыс Гранд-Лайн",
-      "link": "https://vk.com/topic-36291248_32959558",
-      "dozor": "Морской дозор – 700 человек;",
-      "pp": "ПП – отсутствует Заинтересованное лицо: Мисс Бэлле;",
-      "hasDozor": true,
-      "hasPp": true
-    },
-    {
-      "id": "navigation-21-https://vk.com/topic-36291248_32959303",
-      "title": "Садотоп",
-      "link": "https://vk.com/topic-36291248_32959303",
-      "dozor": "",
-      "pp": "Преступное Подполье - 2 степень",
-      "hasDozor": false,
-      "hasPp": true
-    },
-    {
-      "id": "navigation-22-https://vk.com/topic-36291248_53206552",
-      "title": "Дорестад",
-      "link": "https://vk.com/topic-36291248_53206552",
-      "dozor": "",
-      "pp": "Преступное Подполье — 2-я степень, Доктор Рик",
-      "hasDozor": false,
-      "hasPp": true
-    },
-    {
-      "id": "navigation-23-https://vk.com/topic-36291248_32959315",
-      "title": "Джанго Фета",
-      "link": "https://vk.com/topic-36291248_32959315",
-      "dozor": "",
-      "pp": "Преступное Подполье — 1-я степень, Чипчилинка",
-      "hasDozor": false,
-      "hasPp": true
-    },
-    {
-      "id": "navigation-24-https://vk.com/topic-36291248_35046374",
-      "title": "Вильмрон",
-      "link": "https://vk.com/topic-36291248_35046374",
-      "dozor": "Это место забрали себе дозорные",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    {
-      "id": "navigation-25-https://vk.com/topic-36291248_32959331",
-      "title": "Тенгейр",
-      "link": "https://vk.com/topic-36291248_32959331",
-      "dozor": "Количество дозорных: 13 000",
-      "pp": "остров под влиянием Преступного Подполья, 1 степень",
-      "hasDozor": true,
-      "hasPp": true
-    },
-    {
-      "id": "navigation-26-https://vk.com/topic-36291248_32959334",
+      "id": "navigation-0-https://vk.com/topic-36291248_32959334",
       "title": "Бас-Тер",
       "link": "https://vk.com/topic-36291248_32959334",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Количество дозорных: 350 000",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "остров под влиянием Преступного Подполья, 1 степень",
+          "color": "#e69138"
+        },
+        {
+          "id": "акира",
+          "label": "Акира",
+          "column": "E",
+          "text": "Тут есть Фури",
+          "color": "#ff0000"
+        },
+        {
+          "id": "а-если-ещё",
+          "label": "А если ещё?",
+          "column": "F",
+          "text": "1",
+          "color": "#9900ff"
+        }
+      ],
       "dozor": "Количество дозорных: 350 000",
       "pp": "остров под влиянием Преступного Подполья, 1 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-27-https://vk.com/topic-36291248_32959336",
+      "id": "navigation-1-https://vk.com/topic-36291248_32959336",
       "title": "Терсейра",
       "link": "https://vk.com/topic-36291248_32959336",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Представителей дозорных на острове: 50.000 солдат.",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "Представителей дозорных на острове: 50.000 солдат.",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     {
-      "id": "navigation-28-https://vk.com/topic-36291248_32959340",
+      "id": "navigation-2-https://vk.com/topic-36291248_32959340",
       "title": "Даммар",
       "link": "https://vk.com/topic-36291248_32959340",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Тайных агентов СП: 3005 человек на весь остров.",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "Преступное подполье: 2500 человек.",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Тайных агентов СП: 3005 человек на весь остров.",
       "pp": "Преступное подполье: 2500 человек.",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-29-https://vk.com/topic-36291248_37781767",
+      "id": "navigation-3-https://vk.com/topic-36291248_37781767",
       "title": "Шахама",
       "link": "https://vk.com/topic-36291248_37781767",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Тайных агентов Дозора, включая СП: 3025 человек на весь остров.",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "Тайных агентов Дозора, включая СП: 3025 человек на весь остров.",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     {
-      "id": "navigation-30-https://vk.com/topic-36291248_53206565",
+      "id": "navigation-4-https://vk.com/topic-36291248_53206565",
       "title": "Алджера",
       "link": "https://vk.com/topic-36291248_53206565",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "3 000, штаб-квартира в Порфии;",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "3 000, штаб-квартира в Порфии;",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     {
-      "id": "navigation-31-https://vk.com/topic-36291248_32959354",
+      "id": "navigation-5-https://vk.com/topic-36291248_32959354",
       "title": "Аква-лорд",
       "link": "https://vk.com/topic-36291248_32959354",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "Преступное Подполье - 1 степень. Дикий Охотник",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "Преступное Подполье - 1 степень. Дикий Охотник",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-32-https://vk.com/topic-36291248_32959367",
+      "id": "navigation-6-https://vk.com/topic-36291248_32959367",
       "title": "Империалы",
       "link": "https://vk.com/topic-36291248_32959367",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Количество дозорных: неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "остров под влиянием Преступного Подполья, 2 степень; Заинтересованное лицо: Мисс Бэлле, Доктор Рик;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Количество дозорных: неизвестно",
       "pp": "остров под влиянием Преступного Подполья, 2 степень; Заинтересованное лицо: Мисс Бэлле, Доктор Рик;",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-33-https://vk.com/topic-36291248_32959376",
+      "id": "navigation-7-https://vk.com/topic-36291248_32959376",
       "title": "Синопсис",
       "link": "https://vk.com/topic-36291248_32959376",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 2 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 2 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-34-https://vk.com/topic-36291248_32959397",
+      "id": "navigation-8-https://vk.com/topic-36291248_32959397",
       "title": "Остров Кактус",
       "link": "https://vk.com/topic-36291248_32959397",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Местные сотрудничают с дозорными",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "Местные сотрудничают с дозорными",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     {
-      "id": "navigation-35-https://vk.com/topic-36291248_32959407",
+      "id": "navigation-9-https://vk.com/topic-36291248_32959407",
       "title": "Сэнди Айленд",
       "link": "https://vk.com/topic-36291248_32959407",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 2 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 2 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-36-https://vk.com/topic-36291248_53206711",
+      "id": "navigation-10-https://vk.com/topic-36291248_53206711",
       "title": "Дракенвальд",
       "link": "https://vk.com/topic-36291248_53206711",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП – 2-я ступень, Доктор Рик, Дикий Охотник, Миан-Шевуд;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "ПП – 2-я ступень, Доктор Рик, Дикий Охотник, Миан-Шевуд;",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-37-https://vk.com/topic-36291248_53206604",
+      "id": "navigation-11-https://vk.com/topic-36291248_53206604",
       "title": "Киель Терре",
       "link": "https://vk.com/topic-36291248_53206604",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-й ступень, Дикий Охотник;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-й ступень, Дикий Охотник;",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-38-https://vk.com/topic-36291248_53206670",
+      "id": "navigation-12-https://vk.com/topic-36291248_53206670",
       "title": "Белура",
       "link": "https://vk.com/topic-36291248_53206670",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Чипчилинка",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Чипчилинка",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-39-https://vk.com/topic-36291248_53206659",
+      "id": "navigation-13-https://vk.com/topic-36291248_53206659",
       "title": "Джемусалис",
       "link": "https://vk.com/topic-36291248_53206659",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Доктор Рик",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Доктор Рик",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-40-https://vk.com/topic-36291248_32959464",
+      "id": "navigation-14-https://vk.com/topic-36291248_32959464",
       "title": "Грин Лайт",
       "link": "https://vk.com/topic-36291248_32959464",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 3 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 3 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-41-https://vk.com/topic-36291248_53206699",
+      "id": "navigation-15-https://vk.com/topic-36291248_53206699",
       "title": "Гербахарид",
       "link": "https://vk.com/topic-36291248_53206699",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Доктор Рик",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Доктор Рик",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-42-https://vk.com/topic-36291248_32959482",
+      "id": "navigation-16-https://vk.com/topic-36291248_32959482",
       "title": "Сецилия",
       "link": "https://vk.com/topic-36291248_32959482",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 2 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 2 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-43-https://vk.com/topic-36291248_32959501",
+      "id": "navigation-17-https://vk.com/topic-36291248_32959501",
       "title": "Стимхолл",
       "link": "https://vk.com/topic-36291248_32959501",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП: 1-й уровень, заинтересованное лицо Чипчилинка;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП: 1-й уровень, заинтересованное лицо Чипчилинка;",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-44-https://vk.com/topic-36291248_48422941",
+      "id": "navigation-18-https://vk.com/topic-36291248_48422941",
       "title": "Плато №6",
       "link": "https://vk.com/topic-36291248_48422941",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "с недавних пор постоянно не меньше 700.",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "с недавних пор постоянно не меньше 700.",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     {
-      "id": "navigation-45-https://vk.com/topic-36291248_32959509",
+      "id": "navigation-19-https://vk.com/topic-36291248_32959509",
       "title": "Фрельйорд",
       "link": "https://vk.com/topic-36291248_32959509",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 1 уровень, заинтересованное лицо Миан-Шевуд.",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "ПП, 1 уровень, заинтересованное лицо Миан-Шевуд.",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-46-https://vk.com/topic-36291248_53206587",
+      "id": "navigation-20-https://vk.com/topic-36291248_53206587",
       "title": "Амсэр",
       "link": "https://vk.com/topic-36291248_53206587",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Доктор Рик",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Доктор Рик",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-47-https://vk.com/topic-36291248_49515865",
+      "id": "navigation-21-https://vk.com/topic-36291248_49515865",
       "title": "Хуаншу",
       "link": "https://vk.com/topic-36291248_49515865",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "25к дозорных",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "25к дозорных",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     {
-      "id": "navigation-48-https://vk.com/topic-36291248_49494404",
+      "id": "navigation-22-https://vk.com/topic-36291248_49494404",
       "title": "Вульдур",
       "link": "https://vk.com/topic-36291248_49494404",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 3 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 3 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-49-https://vk.com/topic-36291248_53662605",
+      "id": "navigation-23-https://vk.com/topic-36291248_53662605",
       "title": "Элфузир",
       "link": "https://vk.com/topic-36291248_53662605",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "штаб-квартира |8 000~ человек|",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "штаб-квартира |8 000~ человек|",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     {
-      "id": "navigation-50-https://vk.com/topic-36291248_49335334",
+      "id": "navigation-24-https://vk.com/topic-36291248_49335334",
       "title": "Селемен",
       "link": "https://vk.com/topic-36291248_49335334",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 3 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 3 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     {
-      "id": "navigation-51-https://vk.com/topic-36291248_53206530",
+      "id": "navigation-25-https://vk.com/topic-36291248_53206530",
       "title": "Кхонхо Лэнд",
       "link": "https://vk.com/topic-36291248_53206530",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 1 степень, Дикий Охотник",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "ПП, 1 степень, Дикий Охотник",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     }
   ],
   "byLink": {
-    "https://vk.com/topic-36291248_38851753": {
-      "id": "navigation-0-https://vk.com/topic-36291248_38851753",
-      "title": "Спайдер Майлс",
-      "link": "https://vk.com/topic-36291248_38851753",
-      "dozor": "Число дозорных не превышает 100 человек",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878443": {
-      "id": "navigation-1-https://vk.com/topic-36291248_32878443",
-      "title": "Месса",
-      "link": "https://vk.com/topic-36291248_32878443",
-      "dozor": "Очень часто здесь можно встретить Дозор. Они патрулируют порт, и поселение, и совсем немного уходят в лес. Но на этом их патруль заканчивается.",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878471": {
-      "id": "navigation-2-https://vk.com/topic-36291248_32878471",
-      "title": "КокХол",
-      "link": "https://vk.com/topic-36291248_32878471",
-      "dozor": "Дозор: 3000",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38851755": {
-      "id": "navigation-3-https://vk.com/topic-36291248_38851755",
-      "title": "Элзи",
-      "link": "https://vk.com/topic-36291248_38851755",
-      "dozor": "Количество дозора: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878478": {
-      "id": "navigation-4-https://vk.com/topic-36291248_32878478",
-      "title": "Норд-Гранд",
-      "link": "https://vk.com/topic-36291248_32878478",
-      "dozor": "Дозор – 5000 солдат",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878486": {
-      "id": "navigation-5-https://vk.com/topic-36291248_32878486",
-      "title": "Остров Рассвета",
-      "link": "https://vk.com/topic-36291248_32878486",
-      "dozor": "~800 Дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878491": {
-      "id": "navigation-6-https://vk.com/topic-36291248_32878491",
-      "title": "Шеллтаун",
-      "link": "https://vk.com/topic-36291248_32878491",
-      "dozor": "89 000 Дозорных.",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38725952": {
-      "id": "navigation-7-https://vk.com/topic-36291248_38725952",
-      "title": "Острова Орган",
-      "link": "https://vk.com/topic-36291248_38725952",
-      "dozor": "в гавани нередко останавливаются корабли Защитников Справедливости: сразу после успешной операции также был расчищен утёс близ города, на котором теперь возвышается небольшой, но достаточно грозный форт, служащий оперативной базой для действий Дозора в этом регионе.",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38725953": {
-      "id": "navigation-8-https://vk.com/topic-36291248_38725953",
-      "title": "Заводной остров",
-      "link": "https://vk.com/topic-36291248_38725953",
-      "dozor": "Количество дозора: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38725957": {
-      "id": "navigation-9-https://vk.com/topic-36291248_38725957",
-      "title": "Миррорбол",
-      "link": "https://vk.com/topic-36291248_38725957",
-      "dozor": "Дозорные: 1.5к",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878663": {
-      "id": "navigation-10-https://vk.com/topic-36291248_32878663",
-      "title": "Логтаун",
-      "link": "https://vk.com/topic-36291248_32878663",
-      "dozor": "Количество дозорных: ~800",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38735740": {
-      "id": "navigation-11-https://vk.com/topic-36291248_38735740",
-      "title": "Бриндо",
-      "link": "https://vk.com/topic-36291248_38735740",
-      "dozor": "Количество дозора: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878880": {
-      "id": "navigation-12-https://vk.com/topic-36291248_32878880",
-      "title": "Тороа",
-      "link": "https://vk.com/topic-36291248_32878880",
-      "dozor": "20к дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878892": {
-      "id": "navigation-13-https://vk.com/topic-36291248_32878892",
-      "title": "Лас Кэмп",
-      "link": "https://vk.com/topic-36291248_32878892",
-      "dozor": "Дозор: 8-10 человек",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38735738": {
-      "id": "navigation-14-https://vk.com/topic-36291248_38735738",
-      "title": "Страна Цветов",
-      "link": "https://vk.com/topic-36291248_38735738",
-      "dozor": "Количество дозорных: неизвестно",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878895": {
-      "id": "navigation-15-https://vk.com/topic-36291248_32878895",
-      "title": "Мертольф",
-      "link": "https://vk.com/topic-36291248_32878895",
-      "dozor": "Дозорных 1000 человек и их число растет",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38735739": {
-      "id": "navigation-16-https://vk.com/topic-36291248_38735739",
-      "title": "Хильдора",
-      "link": "https://vk.com/topic-36291248_38735739",
-      "dozor": "Мир и покой данного места охраняется крупной базой дозора",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878901": {
-      "id": "navigation-17-https://vk.com/topic-36291248_32878901",
-      "title": "Батерилла",
-      "link": "https://vk.com/topic-36291248_32878901",
-      "dozor": "29к дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32878911": {
-      "id": "navigation-18-https://vk.com/topic-36291248_32878911",
-      "title": "Королевство Финилейв",
-      "link": "https://vk.com/topic-36291248_32878911",
-      "dozor": "1к дозорных",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_38856024": {
-      "id": "navigation-19-https://vk.com/topic-36291248_38856024",
-      "title": "Архипелаг Fumer",
-      "link": "https://vk.com/topic-36291248_38856024",
-      "dozor": "Количество дозорных: неизвестно",
-      "pp": "Влияние: остров под влиянием Преступного Подполья, 3 степень",
-      "hasDozor": true,
-      "hasPp": true
-    },
-    "https://vk.com/topic-36291248_32959558": {
-      "id": "navigation-20-https://vk.com/topic-36291248_32959558",
-      "title": "Мыс Гранд-Лайн",
-      "link": "https://vk.com/topic-36291248_32959558",
-      "dozor": "Морской дозор – 700 человек;",
-      "pp": "ПП – отсутствует Заинтересованное лицо: Мисс Бэлле;",
-      "hasDozor": true,
-      "hasPp": true
-    },
-    "https://vk.com/topic-36291248_32959303": {
-      "id": "navigation-21-https://vk.com/topic-36291248_32959303",
-      "title": "Садотоп",
-      "link": "https://vk.com/topic-36291248_32959303",
-      "dozor": "",
-      "pp": "Преступное Подполье - 2 степень",
-      "hasDozor": false,
-      "hasPp": true
-    },
-    "https://vk.com/topic-36291248_53206552": {
-      "id": "navigation-22-https://vk.com/topic-36291248_53206552",
-      "title": "Дорестад",
-      "link": "https://vk.com/topic-36291248_53206552",
-      "dozor": "",
-      "pp": "Преступное Подполье — 2-я степень, Доктор Рик",
-      "hasDozor": false,
-      "hasPp": true
-    },
-    "https://vk.com/topic-36291248_32959315": {
-      "id": "navigation-23-https://vk.com/topic-36291248_32959315",
-      "title": "Джанго Фета",
-      "link": "https://vk.com/topic-36291248_32959315",
-      "dozor": "",
-      "pp": "Преступное Подполье — 1-я степень, Чипчилинка",
-      "hasDozor": false,
-      "hasPp": true
-    },
-    "https://vk.com/topic-36291248_35046374": {
-      "id": "navigation-24-https://vk.com/topic-36291248_35046374",
-      "title": "Вильмрон",
-      "link": "https://vk.com/topic-36291248_35046374",
-      "dozor": "Это место забрали себе дозорные",
-      "pp": "",
-      "hasDozor": true,
-      "hasPp": false
-    },
-    "https://vk.com/topic-36291248_32959331": {
-      "id": "navigation-25-https://vk.com/topic-36291248_32959331",
-      "title": "Тенгейр",
-      "link": "https://vk.com/topic-36291248_32959331",
-      "dozor": "Количество дозорных: 13 000",
-      "pp": "остров под влиянием Преступного Подполья, 1 степень",
-      "hasDozor": true,
-      "hasPp": true
-    },
     "https://vk.com/topic-36291248_32959334": {
-      "id": "navigation-26-https://vk.com/topic-36291248_32959334",
+      "id": "navigation-0-https://vk.com/topic-36291248_32959334",
       "title": "Бас-Тер",
       "link": "https://vk.com/topic-36291248_32959334",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Количество дозорных: 350 000",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "остров под влиянием Преступного Подполья, 1 степень",
+          "color": "#e69138"
+        },
+        {
+          "id": "акира",
+          "label": "Акира",
+          "column": "E",
+          "text": "Тут есть Фури",
+          "color": "#ff0000"
+        },
+        {
+          "id": "а-если-ещё",
+          "label": "А если ещё?",
+          "column": "F",
+          "text": "1",
+          "color": "#9900ff"
+        }
+      ],
       "dozor": "Количество дозорных: 350 000",
       "pp": "остров под влиянием Преступного Подполья, 1 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_32959336": {
-      "id": "navigation-27-https://vk.com/topic-36291248_32959336",
+      "id": "navigation-1-https://vk.com/topic-36291248_32959336",
       "title": "Терсейра",
       "link": "https://vk.com/topic-36291248_32959336",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Представителей дозорных на острове: 50.000 солдат.",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "Представителей дозорных на острове: 50.000 солдат.",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     "https://vk.com/topic-36291248_32959340": {
-      "id": "navigation-28-https://vk.com/topic-36291248_32959340",
+      "id": "navigation-2-https://vk.com/topic-36291248_32959340",
       "title": "Даммар",
       "link": "https://vk.com/topic-36291248_32959340",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Тайных агентов СП: 3005 человек на весь остров.",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "Преступное подполье: 2500 человек.",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Тайных агентов СП: 3005 человек на весь остров.",
       "pp": "Преступное подполье: 2500 человек.",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_37781767": {
-      "id": "navigation-29-https://vk.com/topic-36291248_37781767",
+      "id": "navigation-3-https://vk.com/topic-36291248_37781767",
       "title": "Шахама",
       "link": "https://vk.com/topic-36291248_37781767",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Тайных агентов Дозора, включая СП: 3025 человек на весь остров.",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "Тайных агентов Дозора, включая СП: 3025 человек на весь остров.",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     "https://vk.com/topic-36291248_53206565": {
-      "id": "navigation-30-https://vk.com/topic-36291248_53206565",
+      "id": "navigation-4-https://vk.com/topic-36291248_53206565",
       "title": "Алджера",
       "link": "https://vk.com/topic-36291248_53206565",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "3 000, штаб-квартира в Порфии;",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "3 000, штаб-квартира в Порфии;",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     "https://vk.com/topic-36291248_32959354": {
-      "id": "navigation-31-https://vk.com/topic-36291248_32959354",
+      "id": "navigation-5-https://vk.com/topic-36291248_32959354",
       "title": "Аква-лорд",
       "link": "https://vk.com/topic-36291248_32959354",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "Преступное Подполье - 1 степень. Дикий Охотник",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "Преступное Подполье - 1 степень. Дикий Охотник",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_32959367": {
-      "id": "navigation-32-https://vk.com/topic-36291248_32959367",
+      "id": "navigation-6-https://vk.com/topic-36291248_32959367",
       "title": "Империалы",
       "link": "https://vk.com/topic-36291248_32959367",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Количество дозорных: неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "остров под влиянием Преступного Подполья, 2 степень; Заинтересованное лицо: Мисс Бэлле, Доктор Рик;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Количество дозорных: неизвестно",
       "pp": "остров под влиянием Преступного Подполья, 2 степень; Заинтересованное лицо: Мисс Бэлле, Доктор Рик;",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_32959376": {
-      "id": "navigation-33-https://vk.com/topic-36291248_32959376",
+      "id": "navigation-7-https://vk.com/topic-36291248_32959376",
       "title": "Синопсис",
       "link": "https://vk.com/topic-36291248_32959376",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 2 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 2 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_32959397": {
-      "id": "navigation-34-https://vk.com/topic-36291248_32959397",
+      "id": "navigation-8-https://vk.com/topic-36291248_32959397",
       "title": "Остров Кактус",
       "link": "https://vk.com/topic-36291248_32959397",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Местные сотрудничают с дозорными",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "Местные сотрудничают с дозорными",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     "https://vk.com/topic-36291248_32959407": {
-      "id": "navigation-35-https://vk.com/topic-36291248_32959407",
+      "id": "navigation-9-https://vk.com/topic-36291248_32959407",
       "title": "Сэнди Айленд",
       "link": "https://vk.com/topic-36291248_32959407",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 2 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 2 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53206711": {
-      "id": "navigation-36-https://vk.com/topic-36291248_53206711",
+      "id": "navigation-10-https://vk.com/topic-36291248_53206711",
       "title": "Дракенвальд",
       "link": "https://vk.com/topic-36291248_53206711",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП – 2-я ступень, Доктор Рик, Дикий Охотник, Миан-Шевуд;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "ПП – 2-я ступень, Доктор Рик, Дикий Охотник, Миан-Шевуд;",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53206604": {
-      "id": "navigation-37-https://vk.com/topic-36291248_53206604",
+      "id": "navigation-11-https://vk.com/topic-36291248_53206604",
       "title": "Киель Терре",
       "link": "https://vk.com/topic-36291248_53206604",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-й ступень, Дикий Охотник;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-й ступень, Дикий Охотник;",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53206670": {
-      "id": "navigation-38-https://vk.com/topic-36291248_53206670",
+      "id": "navigation-12-https://vk.com/topic-36291248_53206670",
       "title": "Белура",
       "link": "https://vk.com/topic-36291248_53206670",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Чипчилинка",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Чипчилинка",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53206659": {
-      "id": "navigation-39-https://vk.com/topic-36291248_53206659",
+      "id": "navigation-13-https://vk.com/topic-36291248_53206659",
       "title": "Джемусалис",
       "link": "https://vk.com/topic-36291248_53206659",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Доктор Рик",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Доктор Рик",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_32959464": {
-      "id": "navigation-40-https://vk.com/topic-36291248_32959464",
+      "id": "navigation-14-https://vk.com/topic-36291248_32959464",
       "title": "Грин Лайт",
       "link": "https://vk.com/topic-36291248_32959464",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 3 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 3 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53206699": {
-      "id": "navigation-41-https://vk.com/topic-36291248_53206699",
+      "id": "navigation-15-https://vk.com/topic-36291248_53206699",
       "title": "Гербахарид",
       "link": "https://vk.com/topic-36291248_53206699",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Доктор Рик",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Доктор Рик",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_32959482": {
-      "id": "navigation-42-https://vk.com/topic-36291248_32959482",
+      "id": "navigation-16-https://vk.com/topic-36291248_32959482",
       "title": "Сецилия",
       "link": "https://vk.com/topic-36291248_32959482",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 2 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 2 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_32959501": {
-      "id": "navigation-43-https://vk.com/topic-36291248_32959501",
+      "id": "navigation-17-https://vk.com/topic-36291248_32959501",
       "title": "Стимхолл",
       "link": "https://vk.com/topic-36291248_32959501",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП: 1-й уровень, заинтересованное лицо Чипчилинка;",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП: 1-й уровень, заинтересованное лицо Чипчилинка;",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_48422941": {
-      "id": "navigation-44-https://vk.com/topic-36291248_48422941",
+      "id": "navigation-18-https://vk.com/topic-36291248_48422941",
       "title": "Плато №6",
       "link": "https://vk.com/topic-36291248_48422941",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "с недавних пор постоянно не меньше 700.",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "с недавних пор постоянно не меньше 700.",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     "https://vk.com/topic-36291248_32959509": {
-      "id": "navigation-45-https://vk.com/topic-36291248_32959509",
+      "id": "navigation-19-https://vk.com/topic-36291248_32959509",
       "title": "Фрельйорд",
       "link": "https://vk.com/topic-36291248_32959509",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 1 уровень, заинтересованное лицо Миан-Шевуд.",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "ПП, 1 уровень, заинтересованное лицо Миан-Шевуд.",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53206587": {
-      "id": "navigation-46-https://vk.com/topic-36291248_53206587",
+      "id": "navigation-20-https://vk.com/topic-36291248_53206587",
       "title": "Амсэр",
       "link": "https://vk.com/topic-36291248_53206587",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "1-я ступень, Доктор Рик",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "1-я ступень, Доктор Рик",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_49515865": {
-      "id": "navigation-47-https://vk.com/topic-36291248_49515865",
+      "id": "navigation-21-https://vk.com/topic-36291248_49515865",
       "title": "Хуаншу",
       "link": "https://vk.com/topic-36291248_49515865",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "25к дозорных",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "25к дозорных",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     "https://vk.com/topic-36291248_49494404": {
-      "id": "navigation-48-https://vk.com/topic-36291248_49494404",
+      "id": "navigation-22-https://vk.com/topic-36291248_49494404",
       "title": "Вульдур",
       "link": "https://vk.com/topic-36291248_49494404",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 3 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 3 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53662605": {
-      "id": "navigation-49-https://vk.com/topic-36291248_53662605",
+      "id": "navigation-23-https://vk.com/topic-36291248_53662605",
       "title": "Элфузир",
       "link": "https://vk.com/topic-36291248_53662605",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "штаб-квартира |8 000~ человек|",
+          "color": "#6d9eeb"
+        }
+      ],
       "dozor": "штаб-квартира |8 000~ человек|",
       "pp": "",
       "hasDozor": true,
-      "hasPp": false
+      "hasPp": false,
+      "dozorColor": "#6d9eeb"
     },
     "https://vk.com/topic-36291248_49335334": {
-      "id": "navigation-50-https://vk.com/topic-36291248_49335334",
+      "id": "navigation-24-https://vk.com/topic-36291248_49335334",
       "title": "Селемен",
       "link": "https://vk.com/topic-36291248_49335334",
+      "influences": [
+        {
+          "id": "dozor",
+          "label": "Присутвие Дозора",
+          "column": "C",
+          "text": "Неизвестно",
+          "color": "#6d9eeb"
+        },
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 3 степень",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "Неизвестно",
       "pp": "ПП, 3 степень",
       "hasDozor": true,
-      "hasPp": true
+      "hasPp": true,
+      "dozorColor": "#6d9eeb",
+      "ppColor": "#e69138"
     },
     "https://vk.com/topic-36291248_53206530": {
-      "id": "navigation-51-https://vk.com/topic-36291248_53206530",
+      "id": "navigation-25-https://vk.com/topic-36291248_53206530",
       "title": "Кхонхо Лэнд",
       "link": "https://vk.com/topic-36291248_53206530",
+      "influences": [
+        {
+          "id": "pp",
+          "label": "Присутвие ПП",
+          "column": "D",
+          "text": "ПП, 1 степень, Дикий Охотник",
+          "color": "#e69138"
+        }
+      ],
       "dozor": "",
       "pp": "ПП, 1 степень, Дикий Охотник",
       "hasDozor": false,
-      "hasPp": true
+      "hasPp": true,
+      "ppColor": "#e69138"
     }
+  },
+  "colors": {
+    "influenceColumns": [
+      {
+        "column": "C",
+        "label": "Присутвие Дозора",
+        "id": "dozor"
+      },
+      {
+        "column": "D",
+        "label": "Присутвие ПП",
+        "id": "pp"
+      },
+      {
+        "column": "E",
+        "label": "Акира",
+        "id": "акира"
+      },
+      {
+        "column": "F",
+        "label": "А если ещё?",
+        "id": "а-если-ещё"
+      }
+    ],
+    "columnColors": {
+      "C": "#6d9eeb",
+      "D": "#e69138",
+      "E": "#ff0000",
+      "F": "#9900ff"
+    },
+    "palette": {
+      "dozor": "#6d9eeb",
+      "pp": "#e69138",
+      "акира": "#ff0000",
+      "а-если-ещё": "#9900ff"
+    },
+    "dozorColor": "#6d9eeb",
+    "ppColor": "#e69138"
   }
 }

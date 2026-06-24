@@ -1,6 +1,7 @@
 import {
   Icon28ArticleOutline,
   Icon28LocationMapOutline,
+  Icon28MarketOutline,
   Icon28StarsOutline,
 } from '@vkontakte/icons';
 import { Icon28SwordOutline } from '../icons/Icon28SwordOutline';
@@ -37,6 +38,14 @@ export const SECTIONS = [
     accent: '#f5a623',
     accentDark: '#d48912',
     Icon: Icon28SwordOutline,
+  },
+  {
+    id: 'shop',
+    title: 'Магазин',
+    subtitle: 'Лоты и цены',
+    accent: '#3ecf8e',
+    accentDark: '#1f9d63',
+    Icon: Icon28MarketOutline,
   },
   // {
   //   id: 'south',

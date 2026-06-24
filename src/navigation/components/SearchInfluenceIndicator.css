@@ -1,0 +1,21 @@
+.search-influence {
+  display: inline-flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.search-influence__segment {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.search-influence .search-influence__segment {
+  width: 14px;
+}
+
+.search-influence .search-influence__segment:not(:only-child) {
+  width: 10px;
+}
+

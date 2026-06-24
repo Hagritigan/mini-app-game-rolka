@@ -42,6 +42,7 @@ import {
   Bosses,
 } from './rules';
 import { NavigationPanel } from './navigation';
+import { ShopPanel } from './shop';
 import { DEFAULT_VIEW_PANELS } from './routes';
 
 export const App = () => {
@@ -58,6 +59,7 @@ export const App = () => {
               <AchievementsSheetPanel id={DEFAULT_VIEW_PANELS.ACHIEVEMENTS_SHEET} />
               <InventoryPanel id={DEFAULT_VIEW_PANELS.INVENTORY} />
               <InventorySheetPanel id={DEFAULT_VIEW_PANELS.INVENTORY_SHEET} />
+              <ShopPanel id={DEFAULT_VIEW_PANELS.SHOP} />
               <NavigationPanel id={DEFAULT_VIEW_PANELS.NAVIGATION} />
               <RulesHomePanel id={DEFAULT_VIEW_PANELS.RULES} />
               <Registration id={DEFAULT_VIEW_PANELS.RULES_REGISTRATION} />

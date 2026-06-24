@@ -1,3 +1,3 @@
 export { IslandCard } from './IslandCard';
-export { IslandMetaBadges, SearchMetaBadges } from './IslandMetaBadges';
-export { MetaBadge } from './MetaBadge';
+export { InfluenceLegend } from './InfluenceLegend';
+export { SearchInfluenceIndicator } from './SearchInfluenceIndicator';

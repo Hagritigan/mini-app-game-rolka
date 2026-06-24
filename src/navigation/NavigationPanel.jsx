@@ -4,9 +4,14 @@ import { Panel, PanelHeader, PanelHeaderBack, Group, Div, ModalCard, ModalRoot }
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import { openExternalLink } from '../utils/openExternalLink';
 import { useNavigationMeta } from '../hooks/useNavigationMeta';
-import { IslandCard, IslandMetaBadges, SearchMetaBadges } from './components';
+import { IslandCard, InfluenceLegend, SearchInfluenceIndicator } from './components';
+import { getInfluenceCount, getInfluenceStyle } from './utils/islandInfluence';
 import { mainLocations } from './data/mainLocations';
 import './NavigationPanel.css';
+
+function getMaxIslandsInWays(ways) {
+  return ways.reduce((max, way) => Math.max(max, way.islands.length), 0);
+}
 
 function NavigationLink({ href, className, style, children }) {
   return (
@@ -33,12 +38,11 @@ NavigationLink.propTypes = {
 export const NavigationPanel = ({ id }) => {
 
   const routeNavigator = useRouteNavigator();
-  const { getMetaForLink } = useNavigationMeta();
+  const { getMetaForLink, legendItems } = useNavigationMeta();
   const [currentSea, setCurrentSea] = useState(null);
   const [currentWay, setCurrentWay] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
   const [currentIsland, setCurrentIsland] = useState(null);
-  const [metaModal, setMetaModal] = useState(null);
   const [currentOthersWay, setCurrentOthersWay] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -52,11 +56,6 @@ export const NavigationPanel = ({ id }) => {
     setActiveModal('island-modal');
   }, []);
 
-  const openMetaModal = useCallback((data) => {
-    setMetaModal(data);
-    setActiveModal('meta-modal');
-  }, []);
-
   const renderIsland = useCallback((island, className = 'islandCard', style) => (
     <IslandCard
       key={island.title}
@@ -65,9 +64,8 @@ export const NavigationPanel = ({ id }) => {
       className={className}
       style={style}
       onOpenModal={openIslandModal}
-      onOpenMeta={openMetaModal}
     />
-  ), [getMetaForLink, openIslandModal, openMetaModal]);
+  ), [getMetaForLink, openIslandModal]);
 
   useEffect(() => {
     if (currentSea && seaDetailsRef.current) {
@@ -90,10 +88,8 @@ export const NavigationPanel = ({ id }) => {
   );
 
   const fourSeas = mainLocations[0].ways.map((sea) => 
-    <div key={sea.title}>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        {sea.islands.map((island) => renderIsland(island))}
-      </div>
+    <div key={sea.title} className="fourSeasColumn">
+      {sea.islands.map((island) => renderIsland(island))}
     </div>
   );
 
@@ -129,18 +125,14 @@ export const NavigationPanel = ({ id }) => {
   )
 
   const firstHalf = mainLocations[2].ways.slice(0, 4).map((way) => 
-    <div key={way.title}>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        {way.islands.map((island) => renderIsland(island))}
-      </div>
+    <div key={way.title} className="fourSeasColumn">
+      {way.islands.map((island) => renderIsland(island))}
     </div>
   )
 
   const secondHalf = mainLocations[2].ways.slice(4, 7).map((way) => 
-    <div key={way.title}>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        {way.islands.map((island) => renderIsland(island))}
-      </div>
+    <div key={way.title} className="fourSeasColumn">
+      {way.islands.map((island) => renderIsland(island))}
     </div>
   )
 
@@ -164,13 +156,9 @@ export const NavigationPanel = ({ id }) => {
     </div>
   )
 
-  const othersLocations = mainLocations[2].ways.slice(7).map((way) => 
-    <div key={way.title}>
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-        {way.islands.map((island) => renderIsland(island, 'islandCard othersCard'))}
-      </div>
-    </div>
-  )
+  const othersLocations = mainLocations[2].ways.slice(7).flatMap((way) =>
+    way.islands.map((island) => renderIsland(island, 'islandCard othersCard'))
+  );
 
   // Функция поиска по всем островам
   const searchIslands = (query) => {
@@ -297,9 +285,10 @@ export const NavigationPanel = ({ id }) => {
       <Group>
         <Div>
           {/* Поиск по островам */}
-          <div style={{padding: '12px', position: 'relative'}}>
+          <div className="navigation-search">
             <input
               type="text"
+              className="navigation-search__input"
               placeholder="Поиск по островам..."
               value={searchQuery}
               onChange={(e) => {
@@ -307,29 +296,9 @@ export const NavigationPanel = ({ id }) => {
                 searchIslands(e.target.value);
               }}
               onBlur={handleClickOutside}
-              style={{
-                width: '100%',
-                padding: '12px',
-                fontSize: '16px',
-                border: '2px solid #ddd',
-                borderRadius: '8px',
-                outline: 'none'
-              }}
             />
             {showSearchResults && searchResults.length > 0 && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                left: 0,
-                right: 0,
-                backgroundColor: 'white',
-                border: '2px solid #ddd',
-                borderRadius: '8px',
-                maxHeight: '300px',
-                overflowY: 'auto',
-                zIndex: 1000,
-                boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-              }}>
+              <div className="navigation-search__results">
                 {searchResults.map((result, index) => {
                   const resultMeta = result.link ? getMetaForLink(result.link) : null;
 
@@ -363,13 +332,7 @@ export const NavigationPanel = ({ id }) => {
                         </span>
                       )}
                       {resultMeta ? (
-                        <div onClick={(event) => event.stopPropagation()}>
-                          <SearchMetaBadges
-                            meta={resultMeta}
-                            islandTitle={result.title}
-                            onOpenMeta={openMetaModal}
-                          />
-                        </div>
+                        <SearchInfluenceIndicator meta={resultMeta} />
                       ) : null}
                     </div>
                     <span style={{fontSize: '12px', color: '#666'}}>{result.location}</span>
@@ -379,6 +342,7 @@ export const NavigationPanel = ({ id }) => {
               </div>
             )}
           </div>
+          <InfluenceLegend items={legendItems} />
         </Div>
       </Group>
       <Group>
@@ -386,19 +350,18 @@ export const NavigationPanel = ({ id }) => {
           <div className='fourSeasHeader'><div className='fourSeasHeaderText seas'>{mainLocations[0].title}</div></div>
           <div className="destop-only">
             {seaTitle}
-            <div className="fourSeasGrid">
+            <div
+              className="fourSeasGrid"
+              style={{ '--grid-rows': getMaxIslandsInWays(mainLocations[0].ways) }}
+            >
               {fourSeas}
             </div>
           </div>
           <div className="mobile-only mobileFourSeas">
             {fourSeasMobile}
           </div>
-          <div className="mobile-only" ref={seaDetailsRef}>
-            <div>
-              <div style={{display: 'flex', flexDirection: 'column'}}>
-                {currentSea?.islands.map((island) => renderIsland(island))}
-              </div>
-            </div>
+          <div className="mobile-only navigation-islands-list" ref={seaDetailsRef}>
+            {currentSea?.islands.map((island) => renderIsland(island))}
           </div>
 
           {/* <div className="fourSeasFooter">
@@ -410,20 +373,27 @@ export const NavigationPanel = ({ id }) => {
             </NavigationLink>
           </div>
           <div className="reverseMountain">
-            <NavigationLink className="reverseMountainButton" href="https://vk.com/topic-36291248_32959558" style={{ textDecoration: 'none' }}>
+            {(() => {
+              const meta = getMetaForLink('https://vk.com/topic-36291248_32959558');
+              const influenceCount = getInfluenceCount(meta);
+
+              return (
+            <NavigationLink
+              className={[
+                'reverseMountainButton',
+                influenceCount === 1 ? 'reverseMountainButton--single' : '',
+                influenceCount >= 2 ? 'reverseMountainButton--multi' : '',
+              ].filter(Boolean).join(' ')}
+              href="https://vk.com/topic-36291248_32959558"
+              style={{
+                textDecoration: 'none',
+                ...getInfluenceStyle(meta),
+              }}
+            >
               <div>{mainLocations[1].title}</div>
-              {(() => {
-                const meta = getMetaForLink('https://vk.com/topic-36291248_32959558');
-                if (!meta?.hasDozor && !meta?.hasPp) return null;
-                return (
-                  <IslandMetaBadges
-                    meta={meta}
-                    islandTitle={mainLocations[1].title}
-                    onOpenMeta={openMetaModal}
-                  />
-                );
-              })()}
             </NavigationLink>
+              );
+            })()}
           </div>
           <img className='blueBorder' src="/navigation/blue-border.jpg" alt="grandLine" />
           <div className="grandLineHeader">
@@ -435,7 +405,10 @@ export const NavigationPanel = ({ id }) => {
           
           {/* <div className="fourSeasGrid"> */}
           <div className="destop-only">
-            <div className="fourSeasGrid">
+            <div
+              className="fourSeasGrid"
+              style={{ '--grid-rows': getMaxIslandsInWays(mainLocations[2].ways.slice(0, 4)) }}
+            >
               {firstHalf}
             </div>
             <div className="blue-line"></div>
@@ -443,17 +416,16 @@ export const NavigationPanel = ({ id }) => {
           <div className="mobile-only mobileFourSeas">
             {grandLineMobile}
           </div>
-          <div className="mobile-only" ref={wayDetailsRef}>
-            <div>
-              <div style={{display: 'flex', flexDirection: 'column'}}>
-                {currentWay?.islands.map((island) => renderIsland(island))}
-              </div>
-            </div>
+          <div className="mobile-only navigation-islands-list" ref={wayDetailsRef}>
+            {currentWay?.islands.map((island) => renderIsland(island))}
           </div>
           <div className="destop-only">
             {grandLineTitleSecondHalf}
             <div className="blue-line"></div>
-            <div className="fourSeasGrid secondHalf">
+            <div
+              className="fourSeasGrid secondHalf"
+              style={{ '--grid-rows': getMaxIslandsInWays(mainLocations[2].ways.slice(4, 7)) }}
+            >
               {secondHalf}
             </div>
           </div>
@@ -462,7 +434,7 @@ export const NavigationPanel = ({ id }) => {
             <div className="othersHeader">
               <div className="fourSeasHeaderText heaven">Остальные</div>
             </div>
-            <div className="othersGrid secondHalf">
+            <div className="othersGrid">
               {othersLocations}
             </div>
           </div>
@@ -504,16 +476,6 @@ export const NavigationPanel = ({ id }) => {
               </div>
             )}
           </div>
-        </ModalCard>
-        <ModalCard
-          id="meta-modal"
-          header={metaModal?.title}
-          onClose={() => {
-            setActiveModal(null);
-            setMetaModal(null);
-          }}
-        >
-          <div className="navigation-meta-modal__text">{metaModal?.text}</div>
         </ModalCard>
       </ModalRoot>
       </div>

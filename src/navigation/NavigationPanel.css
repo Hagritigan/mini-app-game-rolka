@@ -17,6 +17,38 @@
   padding: 0;
 }
 
+.navigation-search {
+  position: relative;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.navigation-search__input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.navigation-search__results {
+  position: absolute;
+  top: 100%;
+  left: 12px;
+  right: 12px;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'Bergamasco Bold Italic';
     src: url(/navigation/bergamasco-bold-italic.ttf);
@@ -58,7 +90,8 @@
   background-size: cover;
   text-align: center;
   background-repeat: space;
-  background-position: center;
+  background-position: center;  
+  margin-top: 8px;
 }
 
 .seas {
@@ -93,9 +126,32 @@
 .fourSeasGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
   position: relative;
   border-bottom: 1px solid #F21BB2;
+  padding-bottom: 8px;
   overflow: visible;
+}
+
+.fourSeasColumn {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span var(--grid-rows, 1);
+  gap: 8px;
+  padding: 0 8px;
+  align-content: start;
+  min-width: 0;
+}
+
+.fourSeasColumn > .island-card-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
 }
 
 .fourSeasGrid > div {
@@ -124,12 +180,14 @@
   margin: auto;
   border: none !important;
   margin-bottom: 1px !important;
+  padding-bottom: 0 !important;
 }
 
 .blue-line {
   width: 100%;
   height: 1px;
   background: #4DC2D3;
+  margin-bottom: 8px;
 }
 
 .purple-line {
@@ -163,11 +221,12 @@
 }
 
 .islandCard {
-  border: 1.5px solid #B6D6F6;
   border-radius: 8px;
   box-shadow: 0 2px 8px #217F8622;
-  padding: 8px 0;
-  margin: 8px 16px;
+  padding: 8px 12px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
   font-size: 18px;
   color: #8593ce;
@@ -175,6 +234,17 @@
   transition: box-shadow 0.2s;
   text-decoration: none;
   overflow: visible;
+}
+
+.navigation-islands-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+
+.navigation-islands-list .island-card-frame {
+  margin: 8px 0;
+  width: 100%;
 }
 
 .islandCard:hover {
@@ -186,6 +256,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 0;
+  padding-bottom: 8px;
 }
 
 .reverseMountain {
@@ -217,6 +288,17 @@
 .reverseMountainButton:hover {
     box-shadow: 0 4px 16px #217F8644;
     cursor: pointer;
+}
+
+.reverseMountainButton--single {
+  border: 4px solid var(--influence-1, #11bd67) !important;
+}
+
+.reverseMountainButton--multi {
+  border: 4px solid transparent !important;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    var(--influence-border-gradient) border-box !important;
 }
 
 .blueBorder {
@@ -289,9 +371,35 @@
   }
 }
 
+.othersGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 0;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.othersGrid .island-card-frame {
+  width: auto;
+  margin: 8px 16px;
+}
+
+.othersGrid .island-card-frame--multi {
+  margin: 8px 16px;
+}
+
+.othersGrid .island-card,
+.othersGrid .islandCard {
+  width: auto;
+}
+
+.othersGrid .island-card-frame--multi .island-card {
+  width: auto;
+}
+
 .othersCard {
   padding: 8px 16px;
-  
 }
 
 /* --- Responsive fixes: use valid top-level media queries --- */
@@ -328,12 +436,4 @@
   .mobileFourSeas {
     display: none;
   }
-}
-
-.navigation-meta-modal__text {
-  padding: 12px 16px 20px;
-  font-size: 15px;
-  line-height: 1.5;
-  white-space: pre-wrap;
-  color: var(--vkui--color_text_primary);
 }
