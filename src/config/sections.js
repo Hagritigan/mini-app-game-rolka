@@ -1,12 +1,27 @@
 import {
-  Icon28CupOutline,
-  Icon28HomeOutline,
+  Icon28ArticleOutline,
   Icon28LocationMapOutline,
   Icon28StarsOutline,
 } from '@vkontakte/icons';
 import { Icon28SwordOutline } from '../icons/Icon28SwordOutline';
 
 export const SECTIONS = [
+  {
+    id: 'rules',
+    title: 'Правила',
+    subtitle: 'Правила ролевой',
+    accent: '#6b8cce',
+    accentDark: '#4a6bb5',
+    Icon: Icon28ArticleOutline,
+  },
+  {
+    id: 'navigation',
+    title: 'Навигация',
+    subtitle: 'Локации мира',
+    accent: '#4dc2d3',
+    accentDark: '#217f86',
+    Icon: Icon28LocationMapOutline,
+  },
   {
     id: 'achievements',
     title: 'Достижения',
@@ -22,14 +37,6 @@ export const SECTIONS = [
     accent: '#f5a623',
     accentDark: '#d48912',
     Icon: Icon28SwordOutline,
-  },
-  {
-    id: 'navigation',
-    title: 'Навигация',
-    subtitle: 'Локации мира',
-    accent: '#4dc2d3',
-    accentDark: '#217f86',
-    Icon: Icon28LocationMapOutline,
   },
   // {
   //   id: 'south',
