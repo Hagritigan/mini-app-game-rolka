@@ -10,6 +10,10 @@ export const SHOP_SPREADSHEET_ID = '1Y-yHRPy0dLHoZnSrzgzcoj_xb5BcFHdFaH9WiHbSU1A
 
 export const SHOP_SHEET_GID = '0';
 
+export const CHARACTERS_SPREADSHEET_ID = '1dusDT6o-wpPtRTrEfELY09SwdUxSvls-3AIqQGkQMTM';
+
+export const CHARACTERS_SHEET_GID = '0';
+
 export const getSpreadsheetEditUrl = (spreadsheetId) =>
   `https://docs.google.com/spreadsheets/d/${spreadsheetId}/edit?hl=ru`;
 

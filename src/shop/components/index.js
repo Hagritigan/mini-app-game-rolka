@@ -1,2 +1,3 @@
 export { ShopProductCard } from './ShopProductCard';
-export { ShopOrderForm } from './ShopOrderForm';
+export { ShopProductForm } from './ShopProductForm';
+export { CharacterAutocomplete } from './CharacterAutocomplete';

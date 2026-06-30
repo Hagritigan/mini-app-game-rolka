@@ -3,6 +3,7 @@ import { fetchFreshAchievementsData } from './fetchFreshAchievementsData.js';
 import { fetchFreshInventoryData } from './fetchFreshInventoryData.js';
 import { fetchFreshNavigationData } from './fetchFreshNavigationData.js';
 
+import { fetchFreshCharactersData } from './fetchFreshCharactersData.js';
 import { fetchFreshShopData } from './fetchFreshShopData.js';
 
 export const achievementsDataStore = createDataStore({
@@ -27,4 +28,10 @@ export const shopDataStore = createDataStore({
   cacheUrl: './data/shop.json',
   storageKey: 'rolka:shop-data',
   fetchFresh: fetchFreshShopData,
+});
+
+export const charactersDataStore = createDataStore({
+  cacheUrl: './data/characters.json',
+  storageKey: 'rolka:characters-data',
+  fetchFresh: fetchFreshCharactersData,
 });

@@ -15,7 +15,7 @@ import {
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import { useShopData } from '../hooks/useShopData';
 import { filterShopItems, groupShopItemsByCategory } from '../utils/parseShopSheet';
-import { ShopOrderForm, ShopProductCard } from './components';
+import { ShopProductCard, ShopProductForm } from './components';
 import './ShopPanel.css';
 
 function formatCount(count) {
@@ -143,7 +143,9 @@ export const ShopPanel = ({ id }) => {
                   Описание не указано.
                 </p>
               )}
-              <ShopOrderForm key={selectedProduct.id} product={selectedProduct} />
+              <div className="shop-product-modal__form">
+                <ShopProductForm key={selectedProduct.id} product={selectedProduct} />
+              </div>
             </div>
           ) : null}
         </ModalCard>
