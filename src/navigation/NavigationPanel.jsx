@@ -348,7 +348,7 @@ export const NavigationPanel = ({ id }) => {
       <Group>
         <Div>
           <div className='fourSeasHeader'><div className='fourSeasHeaderText seas'>{mainLocations[0].title}</div></div>
-          <div className="destop-only">
+          <div className="desktop-only-navigation">
             {seaTitle}
             <div
               className="fourSeasGrid"
@@ -357,10 +357,10 @@ export const NavigationPanel = ({ id }) => {
               {fourSeas}
             </div>
           </div>
-          <div className="mobile-only mobileFourSeas">
+          <div className="mobile-only-navigation mobileFourSeas">
             {fourSeasMobile}
           </div>
-          <div className="mobile-only navigation-islands-list" ref={seaDetailsRef}>
+          <div className="mobile-only-navigation navigation-islands-list" ref={seaDetailsRef}>
             {currentSea?.islands.map((island) => renderIsland(island))}
           </div>
 
@@ -399,12 +399,12 @@ export const NavigationPanel = ({ id }) => {
           <div className="grandLineHeader">
             <div className="fourSeasHeaderText heaven">{mainLocations[2].title}</div>
           </div>
-          <div className="destop-only"> 
+          <div className="desktop-only-navigation"> 
             {grandLineTitleFirstHalf}
           </div>
           
           {/* <div className="fourSeasGrid"> */}
-          <div className="destop-only">
+          <div className="desktop-only-navigation">
             <div
               className="fourSeasGrid"
               style={{ '--grid-rows': getMaxIslandsInWays(mainLocations[2].ways.slice(0, 4)) }}
@@ -413,13 +413,13 @@ export const NavigationPanel = ({ id }) => {
             </div>
             <div className="blue-line"></div>
           </div>
-          <div className="mobile-only mobileFourSeas">
+          <div className="mobile-only-navigation mobileFourSeas">
             {grandLineMobile}
           </div>
-          <div className="mobile-only navigation-islands-list" ref={wayDetailsRef}>
+          <div className="mobile-only-navigation navigation-islands-list" ref={wayDetailsRef}>
             {currentWay?.islands.map((island) => renderIsland(island))}
           </div>
-          <div className="destop-only">
+          <div className="desktop-only-navigation">
             {grandLineTitleSecondHalf}
             <div className="blue-line"></div>
             <div
@@ -430,7 +430,7 @@ export const NavigationPanel = ({ id }) => {
             </div>
           </div>
           {/* <div className="purple-line"></div> */}
-          <div className="destop-only">
+          <div className="desktop-only-navigation">
             <div className="othersHeader">
               <div className="fourSeasHeaderText heaven">Остальные</div>
             </div>

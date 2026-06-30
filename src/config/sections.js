@@ -4,7 +4,7 @@ import {
   Icon28MarketOutline,
   Icon28StarsOutline,
 } from '@vkontakte/icons';
-import { Icon28SwordOutline } from '../icons/Icon28SwordOutline';
+import { Icon28BackpackOutline } from '../icons/Icon28BackpackOutline';
 
 export const SECTIONS = [
   {
@@ -37,30 +37,14 @@ export const SECTIONS = [
     subtitle: 'Предметы и снаряжение',
     accent: '#f5a623',
     accentDark: '#d48912',
-    Icon: Icon28SwordOutline,
-  },
-  {
-    id: 'shop',
-    title: 'Магазин',
-    subtitle: 'Лоты и цены',
-    accent: '#3ecf8e',
-    accentDark: '#1f9d63',
-    Icon: Icon28MarketOutline,
+    Icon: Icon28BackpackOutline,
   },
   // {
-  //   id: 'south',
-  //   title: 'Арена',
-  //   subtitle: 'Сражения и рейтинг',
-  //   accent: '#f25555',
-  //   accentDark: '#c93a3a',
-  //   Icon: Icon28CupOutline,
-  // },
-  // {
-  //   id: 'west',
-  //   title: 'Лагерь',
-  //   subtitle: 'Отдых между походами',
-  //   accent: '#a855f7',
-  //   accentDark: '#7c3aed',
-  //   Icon: Icon28HomeOutline,
+  //   id: 'shop',
+  //   title: 'Магазин',
+  //   subtitle: 'Лоты и цены',
+  //   accent: '#3ecf8e',
+  //   accentDark: '#1f9d63',
+  //   Icon: Icon28MarketOutline,
   // },
 ];

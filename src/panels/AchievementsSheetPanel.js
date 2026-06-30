@@ -9,9 +9,11 @@ import {
 } from '@vkontakte/vkui';
 import { useParams, useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 import PropTypes from 'prop-types';
+import { useRef } from 'react';
 import { AchievementCard } from '../components/AchievementCard';
 import { SheetList } from '../components/SheetList';
 import { useAchievementsSheet } from '../hooks/useAchievementsSheet';
+import { useEqualCardFooters } from '../hooks/useEqualCardFooters';
 import { useSpreadsheetSheets } from '../hooks/useSpreadsheetSheets';
 import './AchievementsSheetPanel.css';
 
@@ -48,6 +50,9 @@ export const AchievementsSheetPanel = ({ id }) => {
   const { achievements, loading, error, reload } = useAchievementsSheet(
     isGroup ? null : sheetGid,
   );
+  const listRef = useRef(null);
+
+  useEqualCardFooters(listRef, achievements);
 
   const openSheet = (gid) => {
     routeNavigator.push(`/achievements/${gid}`);
@@ -118,10 +123,12 @@ export const AchievementsSheetPanel = ({ id }) => {
       {!sheetsLoading && !sheetsError && !isGroup && !loading && !error && achievements.length > 0 ? (
         <>
           <div className="achievements-sheet-panel__count">{formatCount(achievements.length)}</div>
-          <Group className="achievements-sheet-panel__list">
-            {achievements.map((item) => (
-              <AchievementCard key={item.id} item={item} />
-            ))}
+          <Group>
+            <div className="achievements-sheet-panel__list" ref={listRef}>
+              {achievements.map((item) => (
+                <AchievementCard key={item.id} item={item} />
+              ))}
+            </div>
           </Group>
         </>
       ) : null}

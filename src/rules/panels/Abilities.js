@@ -59,7 +59,7 @@ export const Abilities = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Способности и развитие</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 <p style={{paddingBottom:'16px', borderBottom: '1px solid'}}>В ролевой существует четкий баланс, что создается и правится анкетологами, а также берет свою основу не только от канона, но и игроков. Подобная условность 
@@ -282,7 +282,7 @@ export const Abilities = ({ id }) => {
                 </Accordion>
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

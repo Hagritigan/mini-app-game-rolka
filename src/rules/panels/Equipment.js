@@ -10,7 +10,7 @@ export const Equipment = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Снаряжение</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
             <strong>11.1 Снаряжение.</strong>&nbsp;Этот пункт меню полностью посвящен тому, что находится в &laquo;инвентаре&raquo; вашего персонажа, в его ЛД, и касается именно тех вещей и существ, которые будут у вас в нём прописаны.
@@ -89,7 +89,7 @@ export const Equipment = ({ id }) => {
 
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

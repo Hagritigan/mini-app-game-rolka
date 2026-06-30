@@ -17,6 +17,7 @@
 .achievements-sheet-panel__list {
   display: grid;
   grid-template-columns: 1fr;
+  align-items: stretch;
   gap: 16px;
   padding: 8px 12px 16px;
 }

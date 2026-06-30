@@ -11,7 +11,7 @@ export const Rebild = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Система восстановления</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 <strong>Система восстановления</strong>
@@ -74,7 +74,7 @@ export const Rebild = ({ id }) => {
                 Для подачи заявки от игрока требуется написать администратору, внося ссылку на личное дело персонажа, его анкету, личное дело всех ботов, ссылку на личное дело корабля, возможные занятые фрукты, а также ссылку на пост в котором игрок выводит из игры действующего персонажа. После одобрения в течении двух недель необходимо подать анкету на нового персонажа, с пометкой в шапке о том, что данный персонаж создается в рамках данной системы.
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

@@ -10,7 +10,7 @@ export const Ra = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Революционная армия</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 <strong>8. Заведующая Революционной армией&nbsp;</strong>(по всем вопросам):&nbsp;<a className="link" href="https://vk.com/id341014268">Remina Stirling</a>
@@ -515,7 +515,7 @@ export const Ra = ({ id }) => {
                 <strong>8.10 Становление генералом.</strong> Если персонаж игрока набирает соответствующее количество Очков Званий, то он может выдвинуть кандидатуру своего персонажа на место одного из генералов. В таком случае игроку выдается Особое Задание от одного из действующих Генералов или же Лидера Революционной Армии. Данный квест должен быть от 20 000 слов и соответствовать требованиям, которые озвучит NPC. После проверки администрация выносит вердикт желающему игроку: от «Да, вы приняты» до «Нет, попробуйте в следующий раз». Смещённые Генералы при этом из армии не уходят. Они становятся личными спутниками Монки Д. Драгона или же переходят в иную должность, в зависимости от нынешних потребностей РА.
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

@@ -9,7 +9,7 @@ export const Bosses = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
       <PanelHeader>Боссы</PanelHeader>
-      <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+      <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
       <Group>
         <Div>
           <div className='gray-block'>
@@ -146,7 +146,7 @@ export const Bosses = ({ id }) => {
           </ul>
         </Div>
       </Group>
-      <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+      <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

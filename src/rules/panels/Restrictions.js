@@ -37,13 +37,13 @@ export const Restrictions = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Возможности и ограничения</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 {listInfo}
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

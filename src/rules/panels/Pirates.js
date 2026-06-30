@@ -10,7 +10,7 @@ export const Pirates = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Пираты, наемники и охотники за головами</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 <b>7.1 Пираты – одна из фракций в нашей ролевой</b>, среди которых можно сыскать как морских разбойников, 
@@ -466,7 +466,7 @@ export const Pirates = ({ id }) => {
                 </ul>
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

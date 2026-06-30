@@ -17,6 +17,10 @@
   padding: 0;
 }
 
+.navigation-panel .vkuiDiv__host {
+  padding: 0;
+}
+
 .navigation-search {
   position: relative;
   padding: 12px;
@@ -243,8 +247,8 @@
 }
 
 .navigation-islands-list .island-card-frame {
-  margin: 8px 0;
-  width: 100%;
+  margin: 8px;
+  width: calc(100% - 16px);
 }
 
 .islandCard:hover {
@@ -261,7 +265,6 @@
 
 .reverseMountain {
     padding: 10px;
-    width: 100%;
 }
 
 .reverseMountainButton {
@@ -297,7 +300,10 @@
 .reverseMountainButton--multi {
   border: 4px solid transparent !important;
   background:
-    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+      var(--vkui--color_background_content, #fff),
+      var(--vkui--color_background_content, #fff)
+    ) padding-box,
     var(--influence-border-gradient) border-box !important;
 }
 
@@ -311,13 +317,13 @@
   border: none !important;
 }
 
-.destop-only {
+.desktop-only-navigation {
   @media (max-width: 768px) {
     display: none;
   }
 }
 
-.mobile-only {
+.mobile-only-navigation {
   @media (min-width: 768px) {
     display: none;
   }
@@ -347,7 +353,7 @@
   }
 }
 
-.vkuiModalCard {
+.navigation-panel .vkuiModalCard {
   @media screen and (min-width: 768px) {
     position: fixed;
     top: 50%;
@@ -365,7 +371,7 @@
   }
 }
 
-.vkuiModalCardBase__container {
+.navigation-panel .vkuiModalCardBase__container {
   @media screen and (max-width: 768px) {
     border-radius: 16px 16px 0 0 !important;
   }
@@ -404,7 +410,12 @@
 
 /* --- Responsive fixes: use valid top-level media queries --- */
 @media (max-width: 768px) {
-  .destop-only {
+  .navigation-panel .vkuiDiv {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .desktop-only-navigation {
     display: none;
   }
 
@@ -422,17 +433,42 @@
     height: 56px;
   }
 
-  .vkuiModalCard {
+  .mobileFourSeas {
+    gap: 8px;
+  }
+
+  .mobileSea {
+    width: calc(50% - 4px);
+    box-sizing: border-box;
+  }
+
+
+  .navigation-islands-list {
+    padding: 0;
+  }
+
+  .othersGrid .island-card-frame,
+  .othersGrid .island-card-frame--multi {
+    width: 100%;
+  }
+
+  .othersGrid .island-card,
+  .othersGrid .islandCard,
+  .othersGrid .island-card-frame--multi .island-card {
+    width: 100%;
+  }
+
+  .navigation-panel .vkuiModalCard {
     padding: 0 !important;
   }
 
-  .vkuiModalCardBase__container {
+  .navigation-panel .vkuiModalCardBase__container {
     border-radius: 16px 16px 0 0 !important;
   }
 }
 
 @media (min-width: 768px) {
-  .mobile-only,
+  .mobile-only-navigation,
   .mobileFourSeas {
     display: none;
   }

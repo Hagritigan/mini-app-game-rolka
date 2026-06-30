@@ -9,7 +9,7 @@ export const Races = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Расы</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 <strong>12.1 Расы</strong>&nbsp;в нашей ролевой делятся на две "группы" - те, что требуют способности, и те, что можно взять и без траты способности. К последним относятся лишь две - обычные люди и скайпийцы (биркийцы и шандийцы в том числе). Для остальных нужно отдать способность, чтобы стать чистокровным представителем той или иной расы.
@@ -307,7 +307,7 @@ export const Races = ({ id }) => {
                 </Accordion>
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

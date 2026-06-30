@@ -1,6 +1,7 @@
 .achievement-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   border-radius: 16px;
   overflow: hidden;
   background: var(--vkui--color_background_content);
@@ -9,8 +10,10 @@
 
 .achievement-card__main {
   display: flex;
+  flex: 1 1 auto;
   gap: 12px;
   padding: 14px 14px 12px;
+  min-height: 0;
 }
 
 .achievement-card__icon {
@@ -55,8 +58,10 @@
 
 .achievement-card__points {
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 14px 16px;
   text-align: center;

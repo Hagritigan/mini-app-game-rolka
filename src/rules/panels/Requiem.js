@@ -169,7 +169,7 @@ export const Requiem = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Реквием</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 {navig}
@@ -311,7 +311,7 @@ export const Requiem = ({ id }) => {
                 </center>
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

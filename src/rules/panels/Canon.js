@@ -11,7 +11,7 @@ export const Canon = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
         <PanelHeader>Интеграция канонов в ролевую</PanelHeader>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
         <Group>
             <Div>
                 <strong>Интеграция канонов в ролевую</strong>
@@ -59,7 +59,7 @@ export const Canon = ({ id }) => {
                 Помните, каноничные герои в ботах – это опция, которая позволит игрокам разнообразить свою игру, почувствовав себя часть фендома куда лучше; добавить неканоничным персонажам новую ветку своей истории и развития; а также поиграть на любимом персонаже, не затрачивая дополнительные ресурсы. Но это опция требует от каждого, кто ею пользуется – ответственность и адекватность в игре.
             </Div>
         </Group>
-        <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+        <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

@@ -11,7 +11,7 @@ export const Marine = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
       <PanelHeader>Морской Дозор</PanelHeader>
-      <Button size="m" onClick={() => routeNavigator.back()} className="back-button">
+      <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className="back-button">
         Назад
       </Button>
       <Group>
@@ -19,7 +19,7 @@ export const Marine = ({ id }) => {
           <MarineRulesBody routeNavigator={routeNavigator} />
         </Div>
       </Group>
-      <Button size="m" onClick={() => routeNavigator.back()} className="back-button">
+      <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className="back-button">
         Назад
       </Button>
     </div>

@@ -38,13 +38,13 @@ export const Revards = ({ id }) => {
     <Panel id={id}>
       <div className="rules-panel">
       <PanelHeader>Регистрация и анкета. Действия после принятия анкеты</PanelHeader>
-      <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+      <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
       <Group>
         <Div>
           {listInfo}
         </Div>
       </Group>
-      <Button size="m" onClick={() => routeNavigator.back()} className='back-button'>Назад</Button>
+      <Button size="m" onClick={() => routeNavigator.navigate('/rules')} className='back-button'>Назад</Button>
     </div>
 
     </Panel>

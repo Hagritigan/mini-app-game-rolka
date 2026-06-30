@@ -10,7 +10,7 @@ export const RulesHomePanel = ({ id }) => {
 
   return (
     <Panel id={id}>
-      <PanelHeader before={<PanelHeaderBack onClick={() => routeNavigator.back()} />}>
+      <PanelHeader before={<PanelHeaderBack onClick={() => routeNavigator.navigate('/')} />}>
         Правила
       </PanelHeader>
       <div className="rules-panel">
