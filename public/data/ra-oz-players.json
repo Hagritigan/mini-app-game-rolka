@@ -1,0 +1,99 @@
+{
+  "updatedAt": "2026-07-01T15:57:33.737Z",
+  "spreadsheetId": "1UuVagjGoU5topvRne4xUhaS-yTPaHTY0KAn20Ai6gyg",
+  "sheetGid": "0",
+  "hasRankColumn": true,
+  "scoreColumnLabel": "Кол-во ОЗ",
+  "players": [
+    {
+      "number": "1",
+      "characterName": "Джинкс Бэдлак",
+      "rank": "Майор",
+      "ozCount": "9100",
+      "points": "57.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457271857",
+      "ownerLink": "https://vk.com/magikyan99"
+    },
+    {
+      "number": "2",
+      "characterName": "Юханна Чжан",
+      "rank": "Капитан",
+      "ozCount": "1600",
+      "points": "39.2",
+      "personalFileLink": "https://vk.com/photo-36291248_457273254",
+      "ownerLink": "https://vk.com/angel_filla"
+    },
+    {
+      "number": "3",
+      "characterName": "Тонг Коппер",
+      "rank": "Лейтенант",
+      "ozCount": "4750",
+      "points": "17.6",
+      "personalFileLink": "https://vk.com/photo-36291248_457253860",
+      "ownerLink": "https://vk.com/id136016377"
+    },
+    {
+      "number": "4",
+      "characterName": "Смолдер Стар",
+      "rank": "Лейтенант",
+      "ozCount": "2790",
+      "points": "18.1",
+      "personalFileLink": "https://vk.com/photo-36291248_457273656",
+      "ownerLink": "https://vk.com/mrtlrtsbeauty"
+    },
+    {
+      "number": "5",
+      "characterName": "Кай",
+      "rank": "Рекрут",
+      "ozCount": "650",
+      "points": "8",
+      "personalFileLink": "https://vk.com/photo-36291248_457269719",
+      "ownerLink": "https://vk.com/gamil.ijadi"
+    },
+    {
+      "number": "6",
+      "characterName": "Хошу Но Ода",
+      "rank": "Капрал",
+      "ozCount": "3150",
+      "points": "12.6",
+      "personalFileLink": "https://vk.com/photo-36291248_457263493",
+      "ownerLink": "https://vk.com/id690661814"
+    },
+    {
+      "number": "7",
+      "characterName": "Адриано Бельчетте",
+      "rank": "Сержант",
+      "ozCount": "1250",
+      "points": "5.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457259490",
+      "ownerLink": "https://vk.com/id788095686"
+    },
+    {
+      "number": "8",
+      "characterName": "Стальной Гин",
+      "rank": "Сержант",
+      "ozCount": "600",
+      "points": "16.1",
+      "personalFileLink": "https://vk.com/photo-36291248_457260637",
+      "ownerLink": "https://vk.com/id688603619"
+    },
+    {
+      "number": "9",
+      "characterName": "Клеопатра Рейнхарт",
+      "rank": "Старшина",
+      "ozCount": "0",
+      "points": "1.2",
+      "personalFileLink": "https://vk.com/photo-36291248_457273449",
+      "ownerLink": "https://vk.com/mia_nightmare"
+    },
+    {
+      "number": "10",
+      "characterName": "Стелла",
+      "rank": "Солдат",
+      "ozCount": "1800",
+      "points": "3.3",
+      "personalFileLink": "https://vk.com/photo-36291248_457268557",
+      "ownerLink": "https://vk.com/t0rikku"
+    }
+  ]
+}

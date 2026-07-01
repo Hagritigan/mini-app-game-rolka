@@ -1,0 +1,10 @@
+.ra-members__section-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.ra-members__section-title:not(:first-child) {
+  margin-top: 24px;
+}

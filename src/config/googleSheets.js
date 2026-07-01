@@ -14,6 +14,22 @@ export const CHARACTERS_SPREADSHEET_ID = '1dusDT6o-wpPtRTrEfELY09SwdUxSvls-3AIqQ
 
 export const CHARACTERS_SHEET_GID = '0';
 
+export const MARINE_OZ_PLAYERS_SPREADSHEET_ID = '1UuVagjGoU5topvRne4xUhaS-yTPaHTY0KAn20Ai6gyg';
+
+export const MARINE_OZ_PLAYERS_SHEET_GID = '528054903';
+
+export const RA_OZ_PLAYERS_SPREADSHEET_ID = MARINE_OZ_PLAYERS_SPREADSHEET_ID;
+
+export const RA_OZ_PLAYERS_SHEET_GID = '0';
+
+export const CP_OZ_PLAYERS_SPREADSHEET_ID = MARINE_OZ_PLAYERS_SPREADSHEET_ID;
+
+export const CP_OZ_PLAYERS_SHEET_GID = '883563355';
+
+export const SHICHIBUKAI_OZ_PLAYERS_SPREADSHEET_ID = MARINE_OZ_PLAYERS_SPREADSHEET_ID;
+
+export const SHICHIBUKAI_OZ_PLAYERS_SHEET_GID = '1401536101';
+
 export const getSpreadsheetEditUrl = (spreadsheetId) =>
   `https://docs.google.com/spreadsheets/d/${spreadsheetId}/edit?hl=ru`;
 

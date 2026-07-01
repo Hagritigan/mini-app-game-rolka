@@ -24,10 +24,14 @@ import {
   Iosory,
   Restrictions,
   Pirates,
+  ShichibukaiOzPlayers,
   Ra,
+  RaMembers,
   Marine,
   MarineIslandControl,
+  MarineOzPlayers,
   Cp,
+  CpOzPlayers,
   Equipment,
   Races,
   Fishmankarate,
@@ -74,10 +78,14 @@ export const App = () => {
               <Iosory id={DEFAULT_VIEW_PANELS.RULES_IOSORY} />
               <Restrictions id={DEFAULT_VIEW_PANELS.RULES_RESTRICTIONS} />
               <Pirates id={DEFAULT_VIEW_PANELS.RULES_PIRATES} />
+              <ShichibukaiOzPlayers id={DEFAULT_VIEW_PANELS.RULES_SHICHIBUKAI_OZ_PLAYERS} />
               <Ra id={DEFAULT_VIEW_PANELS.RULES_RA} />
+              <RaMembers id={DEFAULT_VIEW_PANELS.RULES_RA_MEMBERS} />
               <Marine id={DEFAULT_VIEW_PANELS.RULES_MARINE} />
               <MarineIslandControl id={DEFAULT_VIEW_PANELS.RULES_MARINE_ISLAND_CONTROL} />
+              <MarineOzPlayers id={DEFAULT_VIEW_PANELS.RULES_MARINE_OZ_PLAYERS} />
               <Cp id={DEFAULT_VIEW_PANELS.RULES_CP} />
+              <CpOzPlayers id={DEFAULT_VIEW_PANELS.RULES_CP_OZ_PLAYERS} />
               <Equipment id={DEFAULT_VIEW_PANELS.RULES_EQUIPMENT} />
               <Races id={DEFAULT_VIEW_PANELS.RULES_RACES} />
               <Fishmankarate id={DEFAULT_VIEW_PANELS.RULES_FISHMANKARATE} />

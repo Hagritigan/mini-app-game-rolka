@@ -1,0 +1,36 @@
+{
+  "updatedAt": "2026-07-01T15:57:34.711Z",
+  "spreadsheetId": "1UuVagjGoU5topvRne4xUhaS-yTPaHTY0KAn20Ai6gyg",
+  "sheetGid": "883563355",
+  "hasRankColumn": true,
+  "scoreColumnLabel": "Кол-во ОЗ",
+  "players": [
+    {
+      "number": "1",
+      "characterName": "Джек Пауль",
+      "rank": "СР-7",
+      "ozCount": "2470",
+      "points": "33.2",
+      "personalFileLink": "https://vk.com/photo-36291248_457267496",
+      "ownerLink": "https://vk.com/relax_bruh"
+    },
+    {
+      "number": "2",
+      "characterName": "Чжун Ли \"Моракс\"",
+      "rank": "СР-7",
+      "ozCount": "3380",
+      "points": "31.9",
+      "personalFileLink": "https://vk.com/photo-36291248_457257226",
+      "ownerLink": "https://vk.com/bobr_vombat"
+    },
+    {
+      "number": "3",
+      "characterName": "Ямамото «Генрюсай» Шигекуни.",
+      "rank": "СР-2",
+      "ozCount": "560",
+      "points": "3.2",
+      "personalFileLink": "https://vk.com/photo-36291248_457273450",
+      "ownerLink": "https://vk.com/nikko_espada"
+    }
+  ]
+}

@@ -1,8 +1,26 @@
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import { Panel, PanelHeader, Button, Group, Div } from '@vkontakte/vkui';
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
+import { BOSSES_PATH } from './constants';
 import './RulesApp.css';
 
-
+function RulesInternalLink({ children, onClick }) {
+  return (
+    <span
+      className="link wk_vk_link"
+      role="link"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onClick();
+        }
+      }}
+    >
+      {children}
+    </span>
+  );
+}
 const info = [
   {
     title: '2.1 Администрация не будет придираться к вашему оформлению постов, однако (!) есть пара нюансов, которых мы советуем вам придерживаться:',
@@ -53,20 +71,32 @@ const info = [
     title: '2.11 В ролевой есть <a href="https://vk.com/id341014268" class="wk_vk_link link" target="_blank">Арбитр</a>. В специфику его деятельности, помимо прочего, включена возможность и право решать разногласия разного толка, находя наиболее верное и объективное решение. В том числе, если подобные трудности возникли при PvP или администратором. Проект нацелен на удобство игры каждому и если у Вас возникают трудности в тех или иных аспектах - Вы имеете право обратиться к нему для получения конечного решения.',
   },
   {
-    title: '2.12 Поскольку ролевая нацелена на развитие героя и имеет ряд особенностей, которые усложняет одиночную игру, каждый новичок, вступивший в проект, может получить уникальную возможность прохождения островов с Game Master. Отыгрывающий поможет адаптироваться Вам к проекту и его нормам, ведя первые Островные Приключения - создаст сюжет, по которому Ваш персонаж пройдет два - три острова, пока не сможет полноценно влиться в игру. Данная игра будет нацелена на помощь с минимальными испытаниями и будет оцениваться с дополнительными баллами для Вашего героя. Дополнительные баллы назначаются отыгрывающим, но не могут превышать награды III ранга взаимодействия с <a href="https://vk.com/page-36291248_52691044" class="wk_vk_link link" target="_blank">Мировым Боссом</a>.',
-  }
+    id: '2.12',
+  },
 ];
 
 export const Game = ({ id }) => {
   const routeNavigator = useRouteNavigator();
 
-  const listInfo = info.map((info) => 
-    <Div key={info.title} style={{ margin: 10 }}>
-       <div dangerouslySetInnerHTML={{ __html: info.title }}></div>
-    </Div>
-    
-  );
+  const listInfo = info.map((item) => {
+    if (item.id === '2.12') {
+      return (
+        <Div key={item.id} style={{ margin: 10 }}>
+          2.12 Поскольку ролевая нацелена на развитие героя и имеет ряд особенностей, которые усложняет одиночную игру, каждый новичок, вступивший в проект, может получить уникальную возможность прохождения островов с Game Master. Отыгрывающий поможет адаптироваться Вам к проекту и его нормам, ведя первые Островные Приключения - создаст сюжет, по которому Ваш персонаж пройдет два - три острова, пока не сможет полноценно влиться в игру. Данная игра будет нацелена на помощь с минимальными испытаниями и будет оцениваться с дополнительными баллами для Вашего героя. Дополнительные баллы назначаются отыгрывающим, но не могут превышать награды III ранга взаимодействия с{' '}
+          <RulesInternalLink onClick={() => routeNavigator.push({ pathname: BOSSES_PATH })}>
+            Мировым Боссом
+          </RulesInternalLink>
+          .
+        </Div>
+      );
+    }
 
+    return (
+      <Div key={item.title} style={{ margin: 10 }}>
+        <div dangerouslySetInnerHTML={{ __html: item.title }} />
+      </Div>
+    );
+  });
   return (
     <Panel id={id}>
       <div className="rules-panel">

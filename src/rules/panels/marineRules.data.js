@@ -3,6 +3,7 @@
  * Редактируйте здесь содержимое — разметка собирается в MarineRulesBody.js.
  */
 
+import { BOSSES_LABEL, BOSSES_PATH } from './constants';
 export const MARINE_ENLISTED_RANKS = [
   'Юнга',
   'Матрос',
@@ -188,15 +189,12 @@ export const MARINE_BOT_REWARD_ROWS = [
   },
 ];
 
-export const MARINE_WORLD_BOSS_LINK = {
-  href: 'https://vk.com/page-36291248_52691044',
-  label: 'Мировые боссы',
+export const MARINE_WORLD_BOSS_ROUTE = {
+  route: { pathname: BOSSES_PATH },
+  routeLabel: BOSSES_LABEL,
 };
 
-export const MARINE_OZ_PLAYERS_LINK = {
-  href: 'https://vk.com/pages?oid=-36291248&p=%D0%9E%D0%97_%D0%B8%D0%B3%D1%80%D0%BE%D0%BA%D0%BE%D0%B2',
-  label: 'Очки званий игроков',
-};
+export const MARINE_OZ_PLAYERS_LABEL = 'Очки званий игроков';
 
 export const MARINE_LIST_PIRATE_OZ = [
   'Пират с наградой 30кк и меньше - 300 ОЗ',
@@ -570,7 +568,7 @@ export const MARINE_RULE_FLOW = [
         text:
           '\u00a0Учитываются только те пираты, которые были замечены во враждебных действиях по отношению к мирному населению или Морскому Дозору/Правительству. Также могут учитываться\u00a0',
       },
-      { link: MARINE_WORLD_BOSS_LINK },
+      MARINE_WORLD_BOSS_ROUTE,
       { text: '.' },
     ],
   },

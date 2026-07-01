@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "fetch-cache": "node scripts/fetch-data-cache.mjs && node scripts/fetch-navigation-cache.mjs && node scripts/fetch-shop-cache.mjs && node scripts/fetch-characters-cache.mjs && node scripts/fetch-shop-orders-topic-cache.mjs",
+    "fetch-cache": "node scripts/fetch-data-cache.mjs && node scripts/fetch-navigation-cache.mjs && node scripts/fetch-shop-cache.mjs && node scripts/fetch-characters-cache.mjs && node scripts/fetch-marine-oz-players-cache.mjs && node scripts/fetch-ra-oz-players-cache.mjs && node scripts/fetch-ra-npc-cache.mjs && node scripts/fetch-cp-oz-players-cache.mjs && node scripts/fetch-shichibukai-oz-players-cache.mjs && node scripts/fetch-shop-orders-topic-cache.mjs",
     "tunnel": "vk-tunnel --insecure=1 --http-protocol=http --ws-protocol=ws --host=0.0.0.0 --port=5173",
     "deploy": "vite build && vk-miniapps-deploy"
   },
@@ -35,6 +35,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "terser": "^5.4.0",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "xlsx": "^0.18.5"
   }
 }

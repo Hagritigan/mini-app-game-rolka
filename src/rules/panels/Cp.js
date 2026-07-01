@@ -1,5 +1,6 @@
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, Accordion } from '@vkontakte/vkui';
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
+import { CP_OZ_PLAYERS_LINK_TEXT, CP_OZ_PLAYERS_PATH } from './constants';
 import './RulesApp.css';
 
 
@@ -19,7 +20,18 @@ export const Cp = ({ id }) => {
                 <strong>10.2</strong>&nbsp;В CП может попасть любой дозорный, не запятнавший свое имя связями с преступными организациями, в звании Младшего Лейтенанта и выше, то есть можно стать членом СП со старта.
                 <br />
                 <br />
-                <strong>10.2.1</strong>&nbsp;<strong>Ранги.</strong>&nbsp;Количество&nbsp;<strong>ОЗ</strong>&nbsp;(<em>очков званий</em>), которые нужно набрать для повышения в звании, указаны рядом с каждым из них. Способы получения ОЗ указаны в разделе&nbsp;<strong>10.3.</strong>&nbsp;<strong><a className='link' target='_blank' href="https://vk.com/pages?oid=-36291248&amp;p=%D0%9E%D0%97_%D0%B8%D0%B3%D1%80%D0%BE%D0%BA%D0%BE%D0%B2_%D0%A1%D0%B0%D0%B9%D1%84%D0%B5%D1%80_%D0%9F%D0%BE%D0%BB&amp;hash=1e41a369a6be907f47">Очки званий игроков можно просмотреть здесь.</a></strong><br />Кандидат в<strong>&nbsp;СП1</strong>&nbsp;&mdash; если вы хотите начать игру как агент Сайфер Пола, то именно в этом ранге будет находиться ваш персонаж. Чтобы стать полноценным агентом вам необходимо будет отыграть задание полученное у администратора, после чего вы сразу же будете переведены в СП.<br />Все ранги, идущие далее, имеют свою систему повышения. Рядом с каждым рангом указано количество&nbsp;<strong>ОЗ</strong>, необходимых для его получения. Набрав необходимое количество&nbsp;<strong>ОЗ</strong>, вы будете повышены в звании. При повышении, личный счётчик&nbsp;<strong>ОЗ</strong>&nbsp;сбрасывается до 0, за исключением того случая, когда было набрано больше&nbsp;<strong>ОЗ</strong>, чем требуется для повышения в звании. В таком раскладе, лишние&nbsp;<strong>ОЗ</strong>&nbsp;переносятся для набора следующего звания.
+                <strong>10.2.1</strong>&nbsp;<strong>Ранги.</strong>&nbsp;Количество&nbsp;<strong>ОЗ</strong>&nbsp;(<em>очков званий</em>), которые нужно набрать для повышения в звании, указаны рядом с каждым из них. Способы получения ОЗ указаны в разделе&nbsp;<strong>10.3.</strong>&nbsp;<strong><span
+                  className="link"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => routeNavigator.push({ pathname: CP_OZ_PLAYERS_PATH })}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      routeNavigator.push({ pathname: CP_OZ_PLAYERS_PATH });
+                    }
+                  }}
+                >{CP_OZ_PLAYERS_LINK_TEXT}</span></strong><br />Кандидат в<strong>&nbsp;СП1</strong>&nbsp;&mdash; если вы хотите начать игру как агент Сайфер Пола, то именно в этом ранге будет находиться ваш персонаж. Чтобы стать полноценным агентом вам необходимо будет отыграть задание полученное у администратора, после чего вы сразу же будете переведены в СП.<br />Все ранги, идущие далее, имеют свою систему повышения. Рядом с каждым рангом указано количество&nbsp;<strong>ОЗ</strong>, необходимых для его получения. Набрав необходимое количество&nbsp;<strong>ОЗ</strong>, вы будете повышены в звании. При повышении, личный счётчик&nbsp;<strong>ОЗ</strong>&nbsp;сбрасывается до 0, за исключением того случая, когда было набрано больше&nbsp;<strong>ОЗ</strong>, чем требуется для повышения в звании. В таком раскладе, лишние&nbsp;<strong>ОЗ</strong>&nbsp;переносятся для набора следующего звания.
                 <ul className="listing">
                     <li><span className="l"><strong>CП1</strong>&nbsp;&ndash; квест полученный у администратора.</span></li>
                     <li><span className="l"><strong>CП2</strong>&nbsp;&ndash; 1000 ОЗ</span></li>

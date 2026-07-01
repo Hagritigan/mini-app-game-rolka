@@ -1,5 +1,6 @@
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, Accordion } from '@vkontakte/vkui';
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
+import { SHICHIBUKAI_OZ_PLAYERS_LINK_TEXT, SHICHIBUKAI_OZ_PLAYERS_PATH } from './constants';
 import './RulesApp.css';
 
 
@@ -422,8 +423,18 @@ export const Pirates = ({ id }) => {
                 замораживается, не имея возможности прокачиваться.
                 <br />
                 <br />
-                <strong>7.5.6&nbsp;<a className='link' target='_blank' href="https://vk.com/pages?oid=-36291248&amp;p=%D0%9E%D0%97_%D0%A8%D0%B8%D1%87%D0%B8%D0%B1%D1%83%D0%BA%D0%B0%D0%B5%D0%B2&amp;hash=2fcce1f427f68976f3">
-                Очки званий Шичибукаев</a>.</strong>&nbsp;В этой теме вы сможете посмотреть количество очков званий Шичибукаев.
+                <strong>7.5.6&nbsp;<span
+                  className="link"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => routeNavigator.push({ pathname: SHICHIBUKAI_OZ_PLAYERS_PATH })}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      routeNavigator.push({ pathname: SHICHIBUKAI_OZ_PLAYERS_PATH });
+                    }
+                  }}
+                >{SHICHIBUKAI_OZ_PLAYERS_LINK_TEXT}</span>.</strong>&nbsp;В этой теме вы сможете посмотреть количество очков званий Шичибукаев.
                 <br />
                 <br />
                 <strong>7.6 Йонко</strong>. Существует четыре великих пирата &ndash; Четыре Императора морей, именуемых йонко. В основном, 

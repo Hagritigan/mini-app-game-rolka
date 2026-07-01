@@ -4,12 +4,12 @@ import { Fragment } from 'react';
 import { Accordion, Div } from '@vkontakte/vkui';
 import {
   MARINE_BOT_REWARD_ROWS,
-  MARINE_OZ_PLAYERS_LINK,
+  MARINE_OZ_PLAYERS_LABEL,
   MARINE_OFFICER_SECTIONS,
   MARINE_RANKS,
   MARINE_RULE_FLOW,
 } from './marineRules.data';
-import { MARINE_ISLAND_CONTROL_PATH } from './constants';
+import { MARINE_ISLAND_CONTROL_PATH, MARINE_OZ_PLAYERS_PATH } from './constants';
 
 function renderInlineSegments(segments) {
   if (!segments?.length) return null;
@@ -393,9 +393,20 @@ export function MarineRulesBody({ routeNavigator }) {
             <Fragment key="s910">
               <strong>
                 9.10&nbsp;
-                <a href={MARINE_OZ_PLAYERS_LINK.href} className="link" target="_blank" rel="noreferrer">
-                  {MARINE_OZ_PLAYERS_LINK.label}
-                </a>
+                <span
+                  className="link"
+                  onClick={() => routeNavigator.push({ pathname: MARINE_OZ_PLAYERS_PATH })}
+                  role="link"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      routeNavigator.push({ pathname: MARINE_OZ_PLAYERS_PATH });
+                    }
+                  }}
+                >
+                  {MARINE_OZ_PLAYERS_LABEL}
+                </span>
                 .
               </strong>
               &nbsp;В этой теме вы сможете посмотреть, кто из дозорных на каком звании, а также сколько у них ОЗ.

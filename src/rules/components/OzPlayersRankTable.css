@@ -1,0 +1,74 @@
+.oz-players-rank-table__desktop {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.oz-players-rank-table__desktop table {
+  min-width: 640px;
+}
+
+.oz-player-card {
+  border: 1px solid rgb(160 160 160);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.oz-player-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.oz-player-card__number {
+  flex: 0 0 auto;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #f0f2f5;
+  color: #3f4250;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: center;
+}
+
+.oz-player-card__name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.oz-player-card__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  margin: 0;
+}
+
+.oz-player-card__stat {
+  margin: 0;
+}
+
+.oz-player-card__stat--full {
+  grid-column: 1 / -1;
+}
+
+.oz-player-card__stat dt {
+  margin: 0 0 2px;
+  color: #626d7a;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.oz-player-card__stat dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  word-break: break-word;
+}

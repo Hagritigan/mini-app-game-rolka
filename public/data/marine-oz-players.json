@@ -1,0 +1,135 @@
+{
+  "updatedAt": "2026-07-01T15:57:32.698Z",
+  "spreadsheetId": "1UuVagjGoU5topvRne4xUhaS-yTPaHTY0KAn20Ai6gyg",
+  "sheetGid": "528054903",
+  "hasRankColumn": true,
+  "scoreColumnLabel": "Кол-во ОЗ",
+  "players": [
+    {
+      "number": "1",
+      "characterName": "Маркус Фокс",
+      "rank": "Вице-адмирал",
+      "ozCount": "0",
+      "points": "70.0",
+      "personalFileLink": "https://vk.com/photo-36291248_456243830",
+      "ownerLink": "https://vk.com/nazgul2000"
+    },
+    {
+      "number": "2",
+      "characterName": "Вильгельма Розенфельд",
+      "rank": "Капитан",
+      "ozCount": "6475",
+      "points": "51.2",
+      "personalFileLink": "https://vk.com/photo-36291248_457251611",
+      "ownerLink": "https://vk.com/aenie_lomelind"
+    },
+    {
+      "number": "3",
+      "characterName": "Кафка",
+      "rank": "Капитан",
+      "ozCount": "6260",
+      "points": "26.5",
+      "personalFileLink": "https://vk.com/photo-36291248_457265431",
+      "ownerLink": "https://vk.com/youre_pretty_good"
+    },
+    {
+      "number": "4",
+      "characterName": "Цзинлю Хаяси",
+      "rank": "Капитан",
+      "ozCount": "4960",
+      "points": "21.7",
+      "personalFileLink": "https://vk.com/photo-36291248_457262690",
+      "ownerLink": "https://vk.com/id216866752"
+    },
+    {
+      "number": "5",
+      "characterName": "Беатрис",
+      "rank": "Капитан",
+      "ozCount": "4410",
+      "points": "19.3",
+      "personalFileLink": "https://vk.com/photo-36291248_457265272",
+      "ownerLink": "https://vk.com/id341014268"
+    },
+    {
+      "number": "6",
+      "characterName": "\"Мидгар\"Д. Зефир",
+      "rank": "Коммандер",
+      "ozCount": "4885",
+      "points": "13.1",
+      "personalFileLink": "https://vk.com/photo-36291248_457274407",
+      "ownerLink": "https://vk.com/id161727686"
+    },
+    {
+      "number": "7",
+      "characterName": "Лара Доррен",
+      "rank": "Коммандер",
+      "ozCount": "0",
+      "points": "8.9",
+      "personalFileLink": "https://vk.com/photo-36291248_457265413",
+      "ownerLink": "https://vk.com/magikyan99"
+    },
+    {
+      "number": "8",
+      "characterName": "Изельда Уль-Бреккер",
+      "rank": "Лейтенант-коммандер",
+      "ozCount": "1100",
+      "points": "9.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457265407",
+      "ownerLink": "https://vk.com/mrtlrtsbeauty"
+    },
+    {
+      "number": "9",
+      "characterName": "Мария Икеда",
+      "rank": "Старший Лейтенант",
+      "ozCount": "720",
+      "points": "2.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457271992",
+      "ownerLink": "https://vk.com/t0rikku"
+    },
+    {
+      "number": "10",
+      "characterName": "Патрик Бенедикт Люций, \"Святоша\"",
+      "rank": "Лейтенант",
+      "ozCount": "1200",
+      "points": "2.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457271659",
+      "ownerLink": "https://vk.com/id1022833057"
+    },
+    {
+      "number": "11",
+      "characterName": "Юя Хитогая",
+      "rank": "Лейтенант",
+      "ozCount": "1100",
+      "points": "1.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457271966",
+      "ownerLink": "https://vk.com/id872527917"
+    },
+    {
+      "number": "12",
+      "characterName": "Шарлотт ла Бронтье",
+      "rank": "Лейтенант",
+      "ozCount": "1100",
+      "points": "2.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457272436",
+      "ownerLink": "https://vk.com/nikko_espada"
+    },
+    {
+      "number": "13",
+      "characterName": "Бейро Инсект",
+      "rank": "Лейтенант",
+      "ozCount": "1100",
+      "points": "2.4",
+      "personalFileLink": "https://vk.com/photo-36291248_457271931",
+      "ownerLink": "https://vk.com/id896885378"
+    },
+    {
+      "number": "14",
+      "characterName": "Леодеганс Гинденбург",
+      "rank": "Младший лейтенант",
+      "ozCount": "700",
+      "points": "1.0",
+      "personalFileLink": "https://vk.com/photo-36291248_457272403",
+      "ownerLink": "https://vk.com/id881571126"
+    }
+  ]
+}

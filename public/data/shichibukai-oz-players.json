@@ -1,0 +1,68 @@
+{
+  "updatedAt": "2026-07-01T15:57:35.669Z",
+  "spreadsheetId": "1UuVagjGoU5topvRne4xUhaS-yTPaHTY0KAn20Ai6gyg",
+  "sheetGid": "1401536101",
+  "hasRankColumn": false,
+  "scoreColumnLabel": "Кол-во ОВ",
+  "players": [
+    {
+      "number": "1",
+      "characterName": "Руджу",
+      "rank": "",
+      "ozCount": "",
+      "points": "76.8",
+      "personalFileLink": "https://vk.com/photo-36291248_456244022",
+      "ownerLink": "https://vk.com/sirzalsobaken"
+    },
+    {
+      "number": "2",
+      "characterName": "Измождённый Белый Герцог",
+      "rank": "",
+      "ozCount": "4100",
+      "points": "112.0",
+      "personalFileLink": "https://vk.com/photo-36291248_456245024",
+      "ownerLink": "https://vk.com/youre_pretty_good"
+    },
+    {
+      "number": "3",
+      "characterName": "Асперо Алас Джарвис",
+      "rank": "",
+      "ozCount": "3685",
+      "points": "64.2",
+      "personalFileLink": "https://vk.com/photo-36291248_457268984",
+      "ownerLink": "https://vk.com/al.aska"
+    },
+    {
+      "number": "4",
+      "characterName": "Яситоро Мицукэ",
+      "rank": "",
+      "ozCount": "",
+      "points": "180.0",
+      "personalFileLink": "https://vk.com/photo-36291248_457271519"
+    },
+    {
+      "number": "5",
+      "characterName": "Юмеко",
+      "rank": "",
+      "ozCount": "",
+      "points": "55.0",
+      "personalFileLink": "https://vk.com/photo-36291248_457255099"
+    },
+    {
+      "number": "6",
+      "characterName": "Лилит",
+      "rank": "",
+      "ozCount": "",
+      "points": "70.0",
+      "personalFileLink": "https://vk.com/photo-36291248_457255100"
+    },
+    {
+      "number": "7",
+      "characterName": "Корнелиус Рекс",
+      "rank": "",
+      "ozCount": "",
+      "points": "75.0",
+      "personalFileLink": "https://vk.com/photo-36291248_457255101"
+    }
+  ]
+}

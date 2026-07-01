@@ -1,5 +1,6 @@
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar, Accordion } from '@vkontakte/vkui';
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
+import { RA_MEMBERS_LABEL, RA_MEMBERS_PATH } from './constants';
 import './RulesApp.css';
 
 
@@ -495,22 +496,22 @@ export const Ra = ({ id }) => {
                     <br />
                     <br /> 
                     <strong>8.9 Список членов Революционной Армии:</strong>
-                    <Accordion open>
-                        <Accordion.Summary iconPosition="before"><b>NPC</b></Accordion.Summary>
-                        <Accordion.Content>
-                        <Div>
-                            <a href="https://vk.com/page-36291248_53274554" className='link' target='_blank'>Ссылка</a>
-                        </Div>
-                        </Accordion.Content>
-                    </Accordion>
-                    <Accordion open>
-                        <Accordion.Summary iconPosition="before"><b>Игроки</b></Accordion.Summary>
-                        <Accordion.Content>
-                        <Div>
-                            <a href="https://vk.com/page-36291248_53445267" className='link'  target='_blank'>Ссылка</a>
-                        </Div>
-                        </Accordion.Content>
-                    </Accordion>
+                    <Div>
+                        <span
+                          className="link"
+                          role="link"
+                          tabIndex={0}
+                          onClick={() => routeNavigator.push({ pathname: RA_MEMBERS_PATH })}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              routeNavigator.push({ pathname: RA_MEMBERS_PATH });
+                            }
+                          }}
+                        >
+                          {RA_MEMBERS_LABEL}
+                        </span>
+                    </Div>
                 </div>
                 <strong>8.10 Становление генералом.</strong> Если персонаж игрока набирает соответствующее количество Очков Званий, то он может выдвинуть кандидатуру своего персонажа на место одного из генералов. В таком случае игроку выдается Особое Задание от одного из действующих Генералов или же Лидера Революционной Армии. Данный квест должен быть от 20 000 слов и соответствовать требованиям, которые озвучит NPC. После проверки администрация выносит вердикт желающему игроку: от «Да, вы приняты» до «Нет, попробуйте в следующий раз». Смещённые Генералы при этом из армии не уходят. Они становятся личными спутниками Монки Д. Драгона или же переходят в иную должность, в зависимости от нынешних потребностей РА.
             </Div>
